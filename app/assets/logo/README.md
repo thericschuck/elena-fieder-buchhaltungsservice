@@ -10,9 +10,9 @@ vertikaler Trennstrich, blaue Unterstreichung unter "Elena Fieder".
 | `elena-fieder-logo-quelle.jpg` | Original der vorherigen Logo-Fassung (JPEG, weisser Hintergrund). Nur Archiv, nicht importieren. |
 | `elena-fieder-logo.png` | Wortmarke freigestellt, graue Schrift – fuer helle Flaechen (Header). |
 | `elena-fieder-logo-hell.png` | Wortmarke freigestellt, Schrift in `--color-bg` – fuer dunkle Flaechen (Footer). |
-| `../../icon.svg` | Ordner-Bildmarke als echtes SVG, aus der Pixelgeometrie der **vorherigen** Logo-Fassung nachgebaut. Favicon. Noch nicht an Logo_3 angepasst, siehe "Offener Punkt". |
-| `../../favicon.ico` | Multi-Size-ICO aus derselben (alten) Bildmarke. |
-| `../../apple-icon.png` | 180x180, alte Bildmarke auf `--color-primary` (Safari legt hinter Transparenz Schwarz). |
+| `../../icon.svg` | Ordner-Bildmarke als echtes SVG, aus der Pixelgeometrie von Logo_3 nachgebaut (drei freistehende Ordner, siehe unten). Favicon/Tab-Icon. |
+| `../../favicon.ico` | Multi-Size-ICO (16/32/48/64/128/256), aus `icon.svg` gerendert. |
+| `../../apple-icon.png` | 180x180, Bildmarke aus `icon.svg` auf `--color-primary` (Safari legt hinter Transparenz Schwarz). |
 
 ## Wie elena-fieder-logo.png / -hell.png aus der Quelle entstanden sind
 
@@ -43,11 +43,27 @@ dem Farbsystem.
 PNG mit Alpha ist hier bewusst die Quelle im Repo – `next/image` liefert daraus
 automatisch AVIF/WebP aus. Nicht durch ein handgeschriebenes WebP ersetzen.
 
+## Wie icon.svg / favicon.ico / apple-icon.png entstanden sind
+
+`icon.svg` ist von Hand nachgebaut (Maske: weisse Ordner-Grundform minus
+duenner schwarzer Kontur fuer Fensterschlitz und Kreis, wie schon in der
+vorherigen Fassung), nicht aus der Rasterdatei automatisch vektorisiert. Ein
+Ordner-Modul (64 Einheiten breit) wird per `<use>` dreimal mit 12 Einheiten
+Abstand instanziert - der sichtbare Unterschied zur vorherigen Fassung ist
+genau dieser Abstand (vorher lagen die Ordner mit nur 4 Einheiten Luecke fast
+aneinander). Farbe, Kontur-Proportionen und Eckenradius sind unveraendert aus
+der alten `icon.svg` uebernommen, weil sie sich bei sehr kleinen Groessen
+(16px Tab-Icon) bereits bewaehrt hatten - dort verschwimmen ohnehin beide
+Fassungen zu drei blauen Balken, Detailtreue zur Wortmarke bringt bei der
+Groesse nichts.
+
+`favicon.ico` und `apple-icon.png` sind aus `icon.svg` gerendert (Playwright/
+Chromium, 256px-Rendering per Groesse per Lanczos herunterskaliert fuers ICO).
+Bei einer Aenderung an `icon.svg` muessen beide neu erzeugt werden - sie sind
+keine Vektor-Referenzen auf die SVG-Datei, sondern gebackene Rasterkopien.
+
 ## Offene Punkte
 
-- Ein echtes Vektor-Original (AI/EPS/SVG) der **Wortmarke** liegt nicht vor.
-  Fuer Print und sehr grosse Darstellungen bei Elena anfragen.
-- `icon.svg`, `favicon.ico` und `apple-icon.png` zeigen noch die Bildmarke der
-  **vorherigen** Logo-Fassung (aneinanderliegende statt freistehende Ordner).
-  Mit Logo_3 sind Favicon/Tab-Icon und Wortmarke damit nicht mehr deckungsgleich
-  - bei Bedarf aus Logo_3 neu nachbauen.
+Ein echtes Vektor-Original (AI/EPS/SVG) der **Wortmarke** (Schriftzug) liegt
+nicht vor. Fuer Print und sehr grosse Darstellungen bei Elena anfragen. Die
+Bildmarke (drei Ordner) liegt dagegen jetzt als echtes SVG vor, siehe oben.
