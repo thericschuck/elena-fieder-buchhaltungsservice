@@ -91,15 +91,46 @@ html.lenis body {
    Base
    --------------------------------------------------------------------------- */
 
+/* --scrollbar-breite braucht eine eigene @property-Registrierung, sonst geht
+   sie in .bleed-rechts schief: ein nicht registrierter Custom Property wird
+   nicht dort berechnet, wo er steht (:root), sondern dort, wo var() ihn
+   einsetzt - das "100%" in calc(100vw - 100%) haette sich dann auf die
+   schmale Grid-Spalte des Bildpanels bezogen statt auf html, und der Rand
+   waere um ein Vielfaches zu negativ geworden (das Bild ist deshalb kurz ganz
+   verschwunden). Mit syntax: '<length>' wird der Wert dagegen einmalig in
+   der eigenen Deklaration (:root, also gegen html) zu einem festen Pixelwert
+   aufgeloest und faehrt als solcher nach unten durch. */
+@property --scrollbar-breite {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
 @layer base {
   :root {
     /* Position der Kontolinie (Soll/Haben-Achse) innerhalb des Containers.
        Rail und Section-Grids lesen denselben Wert, damit sie nicht auseinanderlaufen. */
     --rail-x: 34%;
+
+    /* Breite der Scrollbar, rein aus CSS gemessen: 100vw zaehlt die Scrollbar
+       mit, 100% (bezogen auf die eigene Breite von html) nicht - die Differenz
+       ist genau ihre Breite (0 ohne Scrollbar). Wird unten in .bleed-rechts
+       gebraucht, siehe dort. */
+    --scrollbar-breite: calc(100vw - 100%);
   }
 
   html {
     -webkit-text-size-adjust: 100%;
+  }
+
+  /* Bleed-Elemente (siehe .bleed-rechts) rechnen ihren Randabfall gegen den
+     Viewport statt gegen ihren eigenen, oft schmaleren Container - je nach
+     Grid-/Flex-Verschachtelung kann das leicht ueber den rechten Rand
+     hinausschiessen. overflow-x: clip auf html/body faengt das global ab,
+     ohne dass jede Section einzeln beschnitten werden muss. */
+  html,
+  body {
+    overflow-x: clip;
   }
 
   /* Sprungziele der Anker-Navigation nicht unter den fixen Header schieben */
@@ -160,9 +191,17 @@ html.lenis body {
    Differenz ist genau der rechte Aussenabstand.
 
    Nur so bekommt das Hero-Bildpanel eine Kante am Bildschirmrand, ohne dass
-   Container, Kontolinie und Spaltenraster angefasst werden muessen. */
+   Container, Kontolinie und Spaltenraster angefasst werden muessen.
+
+   Ohne --scrollbar-breite waere das die eigentliche Ursache des horizontalen
+   Scrollens gewesen: 50vw zaehlt die Scrollbar mit, 50% (die Haelfte des
+   umgebenden, schmaleren Containers) nicht - die Differenz war um genau die
+   Scrollbar-Breite zu negativ, das Panel lief also minimal ueber die echte
+   Kante hinaus. overflow-x: clip auf html/body hat das nur kaschiert, nicht
+   behoben - je nach Engine reichte das nicht, und man konnte trotzdem nach
+   rechts scrollen. */
 .bleed-rechts {
-  margin-right: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw + var(--scrollbar-breite));
 }
 
 /* Buchseite: feine Linien wie in einem Kontenbuch. Die Zeilenhoehe laesst sich

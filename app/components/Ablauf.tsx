@@ -69,7 +69,7 @@ export default function Ablauf() {
                   className="block h-2 w-2 rotate-45 bg-gold-tief"
                 />
 
-                <div className="mt-7 flex-1 rounded-lg border border-primary/10 bg-white p-6">
+                <div className="mt-7 flex-1 rounded-lg border border-primary/10 bg-white p-6 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-brand-kante hover:shadow-[0_16px_32px_-20px_rgba(15,46,59,0.35)]">
                   <div className="flex items-baseline justify-between gap-3">
                     <span className="tnum font-headline text-[1.9rem] leading-none tracking-tight text-secondary/60">
                       {String(i + 1).padStart(2, "0")}

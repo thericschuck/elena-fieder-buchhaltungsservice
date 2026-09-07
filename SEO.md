@@ -244,10 +244,11 @@ Stellen abmahnfähig bzw. ein Datenschutzverstoß wäre.
 - [ ] **Porträtfoto von Elena.** Hochformat 4:5, mindestens 800 × 1000 px.
       Der Platzhalterrahmen ist gebaut, die fertige `<Image>`-Zeile steht als
       Kommentar in `app/components/TrustUeberMich.tsx`.
-- [ ] **Schriftliche Freigabe der drei Namensgeber** der Kundenstimmen
-      (DSGVO-Nachweis, E-Mail reicht). Inna W. und Viktor sind abgekürzt bzw.
-      nur mit Vornamen genannt, „Fotostudio Belichtungswert" ist ein
-      Firmenname und braucht die Freigabe des Inhabers.
+- [ ] **Schriftliche Freigabe der vier Namensgeber** der Kundenstimmen
+      (DSGVO-Nachweis, E-Mail reicht). Viktor ist nur mit Vornamen genannt;
+      Carola Stulz und Ruslan Chukhliebov sind mit vollem Namen genannt,
+      „Fotostudio Belichtungswert" ist ein Firmenname und braucht die
+      Freigabe des Inhabers.
 - [ ] **Bio- und Leistungstexte von Elena freigeben lassen** – sie sprechen
       ihre Ich-Perspektive, geschrieben hat sie Schuck Webdesign.
 - [ ] **FAQ-Antwort 2 (Preis) prüfen**: die einzige Antwort ohne Belegstelle in

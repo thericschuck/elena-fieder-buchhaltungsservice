@@ -103,19 +103,21 @@ Website fehlt. Wer Inhalte umbaut, prüft danach diese Tabellen erneut.
 
 ## 3. Kundenstimmen
 
-Drei echte Stimmen, im Wortlaut in `Testimonials.tsx`.
-Die Platzhalter „M. K." und „S. B." sind entfernt.
+Vier echte Stimmen, im Wortlaut in `Testimonials.tsx` – der vollständige,
+bestätigte Bestand (Stand 07.09.2026). Die Platzhalter „M. K." und „S. B."
+sind entfernt. „Inna W." stand hier früher zusätzlich, ist aber nicht Teil
+der bestätigten vier und wurde entfernt.
 
 | Quelle | Umfang | Meta |
 |---|---|---|
 | Fotostudio Belichtungswert | 3 Absätze, vollständig | seit rund zwei Jahren |
-| Inna W. | vollständig | – |
+| Carola Stulz | vollständig | – |
 | Viktor | vollständig, ohne E-Mail-Anrede | seit zwei Jahren |
+| Ruslan Chukhliebov | 5 Absätze, vollständig | seit über einem Jahr |
 
-Darstellung: drei Karten innerhalb der „Über mich"-Section. Die lange Stimme
-nimmt beide Spalten, die zwei kurzen teilen die zweite Reihe – so wirkt keine
-Karte gedrängt. Eingeklappt stehen vier Zeilen, der Rest kommt über „Ganze
-Bewertung lesen" dazu.
+Darstellung: drei Karten gleichzeitig sichtbar, das Fenster rotiert per Pfeil
+weiter (siehe Kopfkommentar in `Testimonials.tsx`). Eingeklappt steht der
+erste Absatz (max. 5 Zeilen), der Rest kommt über „Ganze Bewertung lesen" dazu.
 
 Der vollständige Wortlaut steht dabei **immer** im ausgelieferten HTML; die
 verdeckten Absätze sind per `hidden` ausgeblendet, nicht weggelassen. Wer das

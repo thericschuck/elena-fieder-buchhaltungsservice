@@ -116,9 +116,9 @@ export default function Header() {
               src={logo}
               alt="Elena Fieder Buchhaltungsservice – zum Seitenanfang"
               priority
-              sizes="160px"
+              sizes="220px"
               className={`w-auto transition-[height] duration-300 ease-out ${
-                scrolled ? "h-10 lg:h-11" : "h-11 lg:h-13"
+                scrolled ? "h-11 lg:h-13" : "h-13 lg:h-16"
               }`}
             />
           </a>
@@ -216,8 +216,8 @@ export default function Header() {
                 <Image
                   src={logo}
                   alt="Elena Fieder Buchhaltungsservice – zum Seitenanfang"
-                  sizes="160px"
-                  className="h-11 w-auto"
+                  sizes="180px"
+                  className="h-13 w-auto"
                 />
               </a>
 

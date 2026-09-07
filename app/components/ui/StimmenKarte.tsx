@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties, type SVGProps } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown } from "./Icons";
 
 /*
@@ -95,6 +96,7 @@ export default function StimmenKarte({
   */
   const [offen, setOffen] = useState(false);
   const panelId = `stimme-${index}`;
+  const reduziert = useReducedMotion();
 
   return (
     <figure
@@ -115,25 +117,36 @@ export default function StimmenKarte({
 
         <div className="flex-1 text-[16px] leading-[1.65] text-text">
           {/*
-            Ausgeblendet, nicht weggelassen: so steht der vollstaendige
-            Wortlaut im ausgelieferten HTML und ist auffindbar, auch wenn
-            niemand aufklappt. Nicht auf bedingtes Rendern umbauen.
+            Ausgeblendet, nicht weggelassen: der komplette Wortlaut steht
+            immer und nur EINMAL im DOM, auch zugeklappt - nur die Boxhoehe
+            ist dann auf die ersten fuenf Zeilen begrenzt (132px, nachgerechnet:
+            16px * 1.65 * 5 Zeilen). Damit bleibt er per Strg+F auffindbar,
+            waehrend Framer Motion butterweich zwischen 132px und der vollen
+            Hoehe animiert. Nicht auf bedingtes Rendern umbauen.
 
-            line-clamp klammert nur einen einzelnen Textblock - bei mehreren
-            <p> im selben Container greift es nicht, deshalb klammert der
-            erste Absatz und die restlichen sind hidden.
+            Bewusst EIN Block statt Teaser + Volltext als zwei sich
+            ueberblendende Elemente: die haetten denselben ersten Absatz kurz
+            doppelt gezeigt, waehrend sie sich waehrend der Animation
+            ueberlagert haben ("Text schiebt sich ueber Text"). Ein einziger
+            Block, der seine eigene Hoehe animiert, hat dieses Problem nicht -
+            und line-clamp faellt damit auch weg, das haette beim Umschalten
+            ohnehin nur hart gesprungen statt zu animieren.
           */}
-          {absaetze.map((absatz, k) => (
-            <p
-              key={absatz.slice(0, 24)}
-              hidden={!offen && k > 0}
-              className={`${k > 0 ? "mt-3.5" : ""} ${
-                !offen && k === 0 ? "line-clamp-5" : ""
-              }`}
-            >
-              {absatz}
-            </p>
-          ))}
+          <motion.div
+            initial={false}
+            animate={{ height: offen ? "auto" : 132 }}
+            transition={{
+              duration: reduziert ? 0 : 0.35,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="overflow-hidden"
+          >
+            {absaetze.map((absatz, k) => (
+              <p key={absatz.slice(0, 24)} className={k > 0 ? "mt-3.5" : ""}>
+                {absatz}
+              </p>
+            ))}
+          </motion.div>
 
           <button
             type="button"
@@ -167,7 +180,15 @@ export default function StimmenKarte({
           <cite className="text-sm font-medium text-primary not-italic">
             {name}
           </cite>
-          {meta && <p className="text-xs text-secondary">{meta}</p>}
+          {/* Zeile bleibt reserviert, auch ohne meta (Inna) - sonst ist ihre
+              Karte um eine Zeile niedriger als die uebrigen und die Treppe
+              springt an der Stelle aus dem Raster. */}
+          <p
+            aria-hidden={!meta}
+            className={`text-xs text-secondary ${meta ? "" : "invisible"}`}
+          >
+            {meta ?? "—"}
+          </p>
         </div>
       </figcaption>
     </figure>

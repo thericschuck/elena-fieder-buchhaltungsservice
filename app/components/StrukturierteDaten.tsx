@@ -20,7 +20,7 @@ import { FRAGEN } from "../lib/faq";
 
   BEWUSST NICHT enthalten:
 
-  1. aggregateRating / review. Wir haben drei echte Kundenstimmen, aber von
+  1. aggregateRating / review. Wir haben echte Kundenstimmen, aber von
      der Website selbst eingesammelte Bewertungen sind fuer Review-Snippets
      seit 2019 nicht mehr zulaessig ("self-serving reviews"). Auszeichnen
      wuerde hier nichts bringen und im schlechtesten Fall eine manuelle
