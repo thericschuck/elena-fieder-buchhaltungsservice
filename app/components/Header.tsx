@@ -10,7 +10,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { useSmoothScroll } from "./SmoothScrollProvider";
-import { Close, Menu } from "./ui/Icons";
+import { Close, KreuzMarke, Menu } from "./ui/Icons";
 import logo from "../assets/logo/elena-fieder-logo.png";
 
 const NAV = [
@@ -92,9 +92,9 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-[height,background-color,border-color] duration-300 ease-out ${
+        className={`fixed inset-x-0 top-0 z-50 bg-bg transition-[height,border-color] duration-300 ease-out ${
           scrolled
-            ? "h-18 border-b border-primary/10 bg-bg/85 backdrop-blur-md"
+            ? "h-18 border-b border-primary/10"
             : "h-22 border-b border-transparent"
         }`}
       >
@@ -103,23 +103,50 @@ export default function Header() {
           style={{ scaleX: reduced ? scrollYProgress : fortschritt }}
           className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-brand-tief"
         />
-        <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between px-6 lg:px-10">
+        <div className="relative mx-auto flex h-full w-full max-w-7xl items-center justify-between px-6 lg:px-10">
+          {/* Unsichtbarer Platzhalter: haelt Nav und CTA an ihrer bisherigen
+              Position im Flex-Layout. Das eigentliche Logo liegt absolut
+              darueber (siehe unten) und ist dadurch von der Leistenhoehe
+              unabhaengig - es darf groesser sein, als die Leiste hoch ist,
+              und unten darueber hinausragen. */}
+          <span aria-hidden="true" className="block w-[230px] lg:w-[270px]" />
+
           <a
             href="#hero"
             onClick={(e) => {
               e.preventDefault();
               go("hero");
             }}
-            className="-m-2 block p-2"
+            className="absolute left-0 top-2 block bg-bg p-1.5 lg:top-3.5"
           >
+            {/* Haarlinien-Rahmen wie bei den Kundenstimmen-Karten (siehe
+                StimmenKarte.tsx): laufen ueber die Logokante hinaus und
+                kreuzen sich oben links mit der KreuzMarke. Gleiches Motiv,
+                nur kleiner skaliert - so wirkt das groessere Logo bewusst
+                gesetzt statt einfach nur aufgeblasen.
+
+                Auf dem Handy sitzt das Logo etwas hoeher (top-2) als am
+                Desktop (lg:top-3.5) - dort ist ueber der Leiste mehr Luft.
+
+                Das Logo haengt bewusst unter die Leiste hinaus - Groesse und
+                Position bleiben unabhaengig vom Scroll-Zustand immer gleich
+                (siehe Platzhalter oben). Der Rahmen bekommt deshalb immer
+                (nicht erst beim Scrollen) denselben deckenden Hintergrund wie
+                die Leiste selbst (bg-bg) - der herausragende Teil darf nicht
+                durchsichtig sein, sonst blitzt echter Seiteninhalt durch das
+                Logo hindurch. Das Logo steht so wie ein eigenes Kaertchen vor
+                dem Inhalt, statt ihn zu ueberlagern. */}
+            <span aria-hidden="true" className="pointer-events-none absolute -inset-y-1 -left-px w-px bg-primary/15" />
+            <span aria-hidden="true" className="pointer-events-none absolute -inset-y-1 -right-px w-px bg-primary/15" />
+            <span aria-hidden="true" className="pointer-events-none absolute -inset-x-1 -top-px h-px bg-primary/15" />
+            <span aria-hidden="true" className="pointer-events-none absolute -inset-x-1 -bottom-px h-px bg-primary/15" />
+            <KreuzMarke />
             <Image
               src={logo}
               alt="Elena Fieder Buchhaltungsservice – zum Seitenanfang"
               priority
-              sizes="220px"
-              className={`w-auto transition-[height] duration-300 ease-out ${
-                scrolled ? "h-11 lg:h-13" : "h-13 lg:h-16"
-              }`}
+              sizes="280px"
+              className="h-16 w-auto lg:h-19"
             />
           </a>
 
@@ -204,20 +231,29 @@ export default function Header() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[60] bg-bg lg:hidden"
           >
-            <div className="mx-auto flex h-22 w-full max-w-7xl items-center justify-between px-6">
+            <div className="relative mx-auto flex h-22 w-full max-w-7xl items-center justify-end px-6">
+              {/* Absolut positioniert und mit denselben Werten (top-2,
+                  left-0, deckender bg-bg-Hintergrund) wie das Logo im
+                  geschlossenen Header - so haengt es beim Auf- und Zuklappen
+                  des Menues an exakt derselben Stelle, statt zu springen. */}
               <a
                 href="#hero"
                 onClick={(e) => {
                   e.preventDefault();
                   go("hero");
                 }}
-                className="-m-2 block p-2"
+                className="absolute left-0 top-2 block bg-bg p-1.5"
               >
+                <span aria-hidden="true" className="pointer-events-none absolute -inset-y-1 -left-px w-px bg-primary/15" />
+                <span aria-hidden="true" className="pointer-events-none absolute -inset-y-1 -right-px w-px bg-primary/15" />
+                <span aria-hidden="true" className="pointer-events-none absolute -inset-x-1 -top-px h-px bg-primary/15" />
+                <span aria-hidden="true" className="pointer-events-none absolute -inset-x-1 -bottom-px h-px bg-primary/15" />
+                <KreuzMarke />
                 <Image
                   src={logo}
                   alt="Elena Fieder Buchhaltungsservice – zum Seitenanfang"
-                  sizes="180px"
-                  className="h-13 w-auto"
+                  sizes="220px"
+                  className="h-16 w-auto"
                 />
               </a>
 

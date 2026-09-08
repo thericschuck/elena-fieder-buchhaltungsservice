@@ -278,3 +278,19 @@ export const PfeileHorizontal = (p: IconProps) => (
     <path d="M6 12h12" />
   </Icon>
 );
+
+/**
+ * Pluszeichen auf einer Linienkreuzung. Herkunft: StimmenKarte
+ * (Haarlinien-Rahmen der Kundenstimmen-Karten), Positionierung kommt vom
+ * Einsatzort per className - Default ist die obere linke Ecke einer Karte.
+ */
+export const KreuzMarke = (p: IconProps) => (
+  <Icon
+    strokeWidth={1}
+    className="pointer-events-none absolute top-0 left-0 z-10 size-3.5 shrink-0 -translate-x-[calc(50%+0.5px)] -translate-y-[calc(50%+0.5px)] text-brand-tief/70"
+    {...p}
+  >
+    <path d="M5 12h14" />
+    <path d="M12 5v14" />
+  </Icon>
+);

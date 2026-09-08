@@ -2,7 +2,7 @@
 
 import { useState, type CSSProperties, type SVGProps } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ChevronDown } from "./Icons";
+import { ChevronDown, KreuzMarke } from "./Icons";
 
 /*
   Portiert aus der shadcn-Vorlage "testimonials-3".
@@ -34,26 +34,6 @@ export type Stimme = {
   initialen: string;
   meta: string | null;
 };
-
-/** Pluszeichen auf der Linienkreuzung oben links. */
-function KreuzMarke(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="pointer-events-none absolute top-0 left-0 z-10 size-3.5 shrink-0 -translate-x-[calc(50%+0.5px)] -translate-y-[calc(50%+0.5px)] text-brand-tief/70"
-      {...props}
-    >
-      <path d="M5 12h14" />
-      <path d="M12 5v14" />
-    </svg>
-  );
-}
 
 /**
  * Ausgestelltes Anfuehrungszeichen, Konturform.
