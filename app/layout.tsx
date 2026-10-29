@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(FIRMA.url),
 
   title: {
-    default: "Buchhaltungsservice Obernburg am Main | Elena Fieder",
+    default: "Buchhaltungsservice* Obernburg am Main | Elena Fieder",
     // Unterseiten setzen nur ihren eigenen Titel, der Rest kommt von hier.
     template: `%s | ${FIRMA.name}`,
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     nicht ueberladen und nicht mit Wunschbegriffen fuellen.
   */
   keywords: [
-    "Buchhaltungsservice Obernburg",
+    "Buchhaltungsservice* Obernburg",
     "Buchhaltung Obernburg am Main",
     "Bilanzbuchhalterin IHK",
     "Buchen laufender Geschäftsvorfälle",
@@ -83,20 +83,20 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: FIRMA.url,
     siteName: FIRMA.name,
-    title: "Buchhaltungsservice Obernburg am Main | Elena Fieder",
+    title: "Buchhaltungsservice* Obernburg am Main | Elena Fieder",
     description:
       "Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK), über 10 Jahre Berufserfahrung, deutschlandweit digital.",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Buchhaltungsservice Obernburg am Main | Elena Fieder",
+    title: "Buchhaltungsservice* Obernburg am Main | Elena Fieder",
     description:
       "Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK), deutschlandweit digital.",
   },
 
-  /* Telefonnummern duerfen erkannt werden, Adressen nicht - iOS verlinkt
-     sonst Textfragmente, die keine Adresse sind, und zerlegt das Layout. */
+  /* Adressen duerfen nicht erkannt werden - iOS verlinkt sonst
+     Textfragmente, die keine Adresse sind, und zerlegt das Layout. */
   formatDetection: { telephone: true, address: false, email: true },
 };
 

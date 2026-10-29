@@ -11,7 +11,7 @@ import {
 } from "framer-motion";
 import { useSmoothScroll } from "./SmoothScrollProvider";
 import { Close, KreuzMarke, Menu } from "./ui/Icons";
-import logo from "../assets/logo/elena-fieder-logo.png";
+import logo from "../assets/logo/Elena_Fieder_Logo_3.png";
 
 const NAV = [
   { id: "leistungen", label: "Leistungen" },
@@ -143,7 +143,7 @@ export default function Header() {
             <KreuzMarke />
             <Image
               src={logo}
-              alt="Elena Fieder Buchhaltungsservice – zum Seitenanfang"
+              alt="Elena Fieder Buchhaltungsservice* – zum Seitenanfang"
               priority
               sizes="280px"
               className="h-16 w-auto lg:h-19"
@@ -251,7 +251,7 @@ export default function Header() {
                 <KreuzMarke />
                 <Image
                   src={logo}
-                  alt="Elena Fieder Buchhaltungsservice – zum Seitenanfang"
+                  alt="Elena Fieder Buchhaltungsservice* – zum Seitenanfang"
                   sizes="220px"
                   className="h-16 w-auto"
                 />

@@ -34,8 +34,7 @@ export default function NichtGefunden() {
         </li>
       </ul>
       <p>
-        Oder direkt melden: <a href={FIRMA.telefonHref}>{FIRMA.telefon}</a>,{" "}
-        <a href={`mailto:${FIRMA.email}`}>{FIRMA.email}</a>
+        Oder direkt melden: <a href={`mailto:${FIRMA.email}`}>{FIRMA.email}</a>
       </p>
     </RechtstextSeite>
   );

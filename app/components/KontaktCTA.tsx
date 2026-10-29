@@ -1,6 +1,8 @@
 "use client";
 
 import {
+  startTransition,
+  useActionState,
   useRef,
   useState,
   type CSSProperties,
@@ -8,22 +10,26 @@ import {
   type InputHTMLAttributes,
 } from "react";
 import Rail from "./ui/Rail";
+import { sendeKontaktanfrage } from "../actions/kontaktanfrage";
 import { ArrowRight, Check, WarningCircle } from "./ui/Icons";
 import {
   HONEYPOT,
   hatFehler,
   leseFormData,
   pruefeKontakt,
+  type KontaktErgebnis,
   type KontaktFehler,
 } from "../lib/kontakt";
 
 /*
-  ACHTUNG: Dieses Formular versendet noch nichts.
-  Die Server Action in app/actions/kontaktanfrage.ts ist fertig, aber noch nicht
-  verdrahtet. Die drei Schritte zur Aktivierung stehen in KONTAKT-SETUP.md.
+  Versand ueber die Server Action in app/actions/kontaktanfrage.ts (Resend,
+  zwei Mails: Benachrichtigung und Bestaetigung). Setup: KONTAKT-SETUP.md.
 
   Die Pruefregeln kommen aus app/lib/kontakt.ts – dieselbe Datei nutzt die
-  Action serverseitig, damit Client und Server nicht auseinanderlaufen.
+  Action serverseitig, damit Client und Server nicht auseinanderlaufen. Die
+  Action wird per startTransition aufgerufen und nicht ueber das action-Attribut
+  des Formulars: React setzt ein Formular nach einer Action zurueck, und bei
+  einem Serverfehler waeren dann alle Eingaben weg.
 */
 
 type FeldName = "name" | "email" | "telefon";
@@ -47,10 +53,18 @@ const FELD_KLASSE =
 export default function KontaktCTA() {
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<KontaktFehler>({});
-  const [sent, setSent] = useState<string | null>(null);
+  const [ergebnis, formAction, pending] = useActionState<
+    KontaktErgebnis,
+    FormData
+  >(sendeKontaktanfrage, { status: "leer" });
+
+  const serverFehler = ergebnis.status === "fehler" ? ergebnis.fehler : undefined;
+  const allgemein = ergebnis.status === "fehler" ? ergebnis.allgemein : undefined;
+  const gesendet = ergebnis.status === "ok";
+  const alleFehler: KontaktFehler = { ...serverFehler, ...errors };
 
   const fehlerFuer = (key: string) =>
-    (errors as Record<string, string | undefined>)[key];
+    (alleFehler as Record<string, string | undefined>)[key];
 
   /** Prueft erst beim Verlassen des Feldes, nicht bei jedem Tastendruck. */
   const handleBlur = () => {
@@ -62,7 +76,8 @@ export default function KontaktCTA() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const naechste = pruefeKontakt(leseFormData(new FormData(form)));
+    const formData = new FormData(form);
+    const naechste = pruefeKontakt(leseFormData(formData));
     setErrors(naechste);
 
     const erstes = Object.keys(naechste)[0];
@@ -71,15 +86,7 @@ export default function KontaktCTA() {
       return;
     }
 
-    // TODO: durch useActionState(sendeKontaktanfrage, ...) ersetzen.
-    // Datum erst im Event-Handler bilden, nie beim Rendern – sonst weicht die
-    // Server-Ausgabe von der Client-Hydration ab.
-    setSent(
-      new Date().toLocaleDateString("de-DE", {
-        day: "2-digit",
-        month: "2-digit",
-      }),
-    );
+    startTransition(() => formAction(formData));
   };
 
   return (
@@ -149,7 +156,7 @@ export default function KontaktCTA() {
             {/* Ganz normales Formular: Beschriftung ueber dem Feld, ein Feld
                 pro Zeile, sichtbare Raender. */}
             <div className="mt-10 max-w-[38rem]">
-                {sent ? (
+                {gesendet ? (
                   <div
                     role="status"
                     aria-live="polite"
@@ -157,10 +164,11 @@ export default function KontaktCTA() {
                   >
                     <p className="flex items-center gap-3 font-headline text-lg tracking-tight text-bg">
                       <Check className="h-5 w-5 shrink-0 text-gold" />
-                      Anfrage notiert am {sent}
+                      Vielen Dank, Ihre Anfrage ist angekommen.
                     </p>
                     <p className="mt-3 text-[15px] leading-[1.6] text-white/70">
-                      Ich melde mich bei Ihnen.
+                      Ich melde mich bei Ihnen. Eine Bestätigung habe ich Ihnen
+                      per E-Mail geschickt.
                     </p>
                   </div>
                 ) : (
@@ -236,9 +244,9 @@ export default function KontaktCTA() {
                           type="checkbox"
                           name="datenschutz"
                           onBlur={handleBlur}
-                          aria-invalid={errors.datenschutz ? true : undefined}
+                          aria-invalid={alleFehler.datenschutz ? true : undefined}
                           aria-describedby={
-                            errors.datenschutz ? "err-datenschutz" : undefined
+                            alleFehler.datenschutz ? "err-datenschutz" : undefined
                           }
                           className="mt-0.5 h-5 w-5 shrink-0 accent-gold"
                         />
@@ -256,16 +264,26 @@ export default function KontaktCTA() {
                           <span className="text-gold">{" *"}</span>
                         </span>
                       </label>
-                      {errors.datenschutz && (
-                        <Fehler id="err-datenschutz" text={errors.datenschutz} />
+                      {alleFehler.datenschutz && (
+                        <Fehler
+                          id="err-datenschutz"
+                          text={alleFehler.datenschutz}
+                        />
                       )}
                     </div>
 
+                    {allgemein && (
+                      <div className="mt-6">
+                        <Fehler id="err-allgemein" text={allgemein} />
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="gold-flaeche group mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-md px-7 py-4 text-base font-medium text-text hover:-translate-y-0.5"
+                      disabled={pending}
+                      className="gold-flaeche group mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-md px-7 py-4 text-base font-medium text-text hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70 disabled:hover:translate-y-0"
                     >
-                      Persönliches Erstgespräch anfragen
+                      {pending ? "Wird gesendet …" : "Persönliches Erstgespräch anfragen"}
                       <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
                     </button>
 

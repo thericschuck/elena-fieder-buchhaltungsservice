@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import Rail from "./ui/Rail";
-import { Envelope, MapPin, Phone } from "./ui/Icons";
-import logoHell from "../assets/logo/elena-fieder-logo-hell.png";
+import { Envelope, MapPin } from "./ui/Icons";
+import logoHell from "../assets/logo/Elena_Fieder_Logo_3_hell.png";
 import { FIRMA } from "../lib/firma";
 
 /*
   Die vollstaendige Anschrift steht hier bewusst im Footer und nicht nur im
-  Impressum: fuer die lokale Suche zaehlt, dass Name, Adresse und Telefon auf
+  Impressum: fuer die lokale Suche zaehlt, dass Name, Adresse und E-Mail auf
   jeder Seite in genau derselben Schreibweise auftauchen. Die Werte kommen aus
   app/lib/firma.ts - dort aendern, nicht hier.
 
@@ -28,7 +28,7 @@ export default function Footer() {
                 waere auf dem Primary-Block nicht lesbar. */}
             <Image
               src={logoHell}
-              alt="Elena Fieder Buchhaltungsservice"
+              alt="Elena Fieder Buchhaltungsservice*"
               sizes="220px"
               className="h-14 w-auto"
             />
@@ -48,13 +48,6 @@ export default function Footer() {
               Kontakt
             </h2>
             <address className="mt-5 flex flex-col gap-3.5 text-[15px] text-white/75 not-italic">
-              <a
-                href={FIRMA.telefonHref}
-                className="flex items-center gap-3 transition-colors hover:text-bg"
-              >
-                <Phone className="h-4 w-4 shrink-0 text-gold" />
-                {FIRMA.telefon}
-              </a>
               <a
                 href={`mailto:${FIRMA.email}`}
                 className="flex items-center gap-3 transition-colors hover:text-bg"
@@ -111,7 +104,7 @@ export default function Footer() {
               Rechtlicher Hinweis
             </h2>
             <p className="mt-3">
-              Meine Dienstleistungen aus dem Bereich Buchhaltung unterliegen den
+              * Meine Dienstleistungen aus dem Bereich Buchhaltung unterliegen den
               Einschränkungen des § 6 Nr. 3 und 4 des StBerG. Im Bereich
               Buchhaltung biete ich Ihnen nur das Buchen der lfd.
               Geschäftsvorfälle und die Belegverarbeitung an. Es wird

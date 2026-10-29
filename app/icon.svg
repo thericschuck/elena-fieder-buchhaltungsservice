@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 218">
-  <title>Elena Fieder Buchhaltungsservice</title>
+  <title>Elena Fieder Buchhaltungsservice*</title>
   <!--
     Nachgebaut aus Logo_3 (siehe app/assets/logo/README.md): drei
     freistehende Ordner statt aneinanderliegender wie in der vorherigen
@@ -29,5 +29,5 @@
       <circle cx="183.5" cy="139.5" r="11.75" stroke-width="4.5"/>
     </g>
   </mask>
-  <rect width="216" height="218" fill="#0CC1E0" mask="url(#ordner)"/>
+  <rect width="216" height="218" fill="#63B5F5" mask="url(#ordner)"/>
 </svg>

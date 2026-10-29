@@ -44,8 +44,6 @@ export default function ImpressumSeite() {
       <h2>Kontakt</h2>
       <div className="block">
         <p>
-          Telefon: <a href={FIRMA.telefonHref}>{FIRMA.telefon}</a>
-          <br />
           E-Mail: <a href={`mailto:${FIRMA.email}`}>{FIRMA.email}</a>
           <br />
           Website: <a href={FIRMA.url}>{FIRMA.domain}</a>
@@ -73,11 +71,11 @@ export default function ImpressumSeite() {
       </p>
       <p>
         <strong>
-          Die Tätigkeit beschränkt sich auf Hilfeleistungen in Steuersachen im
+          * Die Tätigkeit beschränkt sich auf Hilfeleistungen in Steuersachen im
           Rahmen von § 6 Nr. 3 und Nr. 4 Steuerberatungsgesetz (StBerG).
         </strong>{" "}
-        Dazu gehören insbesondere das Buchen laufender Geschäftsvorfälle sowie
-        das Führen von Büchern und Aufzeichnungen. Nicht angeboten werden
+        Im Bereich Buchhaltung werden nur das Buchen der laufenden
+        Geschäftsvorfälle und die Belegverarbeitung angeboten. Nicht angeboten werden
         Leistungen, die Steuerberaterinnen und Steuerberatern vorbehalten sind –
         insbesondere steuerliche Beratung, die Erstellung von Jahresabschlüssen
         und Bilanzen sowie die Anfertigung von Steuererklärungen.

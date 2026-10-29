@@ -3,12 +3,12 @@
  *
  * Impressum, Datenschutzerklaerung, Footer, Metadaten, Sitemap und die
  * strukturierten Daten lesen alle von hier. Fuer lokale Suche ist das nicht
- * nur bequem, sondern notwendig: Google bewertet Name, Adresse und Telefon
+ * nur bequem, sondern notwendig: Google bewertet Name, Adresse und E-Mail
  * ("NAP") ueber alle Fundstellen hinweg, und schon eine abweichende
  * Schreibweise schwaecht das Signal. Aenderungen also ausschliesslich hier.
  */
 export const FIRMA = {
-  name: "Elena Fieder Buchhaltungsservice",
+  name: "Elena Fieder Buchhaltungsservice*",
   inhaberin: "Elena Fieder",
 
   strasse: "Siegfriedstraße 75",
@@ -19,12 +19,7 @@ export const FIRMA = {
   land: "Deutschland",
   landCode: "DE",
 
-  /** Anzeigeform, national gegliedert. */
-  telefon: "0172 7419091",
-  /** tel:-Ziel, international – Pflicht, damit Mobilgeraete korrekt waehlen. */
-  telefonHref: "tel:+491727419091",
-  /** E.164, so erwartet es schema.org. */
-  telefonE164: "+491727419091",
+  /* Bewusst keine Telefonnummer: Elena moechte keine angeben. Nicht ergaenzen. */
 
   email: "info@elena-fieder.de",
   domain: "elena-fieder.de",

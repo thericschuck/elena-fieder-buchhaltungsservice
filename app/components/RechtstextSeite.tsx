@@ -28,7 +28,7 @@ export default function RechtstextSeite({
               Elena Fieder
             </span>
             <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.22em] text-secondary">
-              Buchhaltungsservice
+              Buchhaltungsservice*
             </span>
           </Link>
 

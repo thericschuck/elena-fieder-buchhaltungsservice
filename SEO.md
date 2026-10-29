@@ -1,4 +1,4 @@
-# SEO – Elena Fieder Buchhaltungsservice
+# SEO – Elena Fieder Buchhaltungsservice*
 
 Stand 06.09.2026. Domain: `elena-fieder.de`
 
@@ -14,20 +14,20 @@ So sieht der Eintrag aus:
 
 ```
 elena-fieder.de
-Buchhaltungsservice Obernburg am Main | Elena Fieder
+Buchhaltungsservice* Obernburg am Main | Elena Fieder
 Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler.
 Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit digital.
 ```
 
 | Feld | Text | Länge |
 |---|---|---|
-| Title | Buchhaltungsservice Obernburg am Main \| Elena Fieder | 52 Zeichen |
+| Title | Buchhaltungsservice* Obernburg am Main \| Elena Fieder | 52 Zeichen |
 | Description | Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit digital. | 142 Zeichen |
 
 Google kappt Titles ab rund 60 Zeichen und Descriptions ab rund 160 – beides
 liegt bewusst knapp darunter, damit nichts abgeschnitten wird.
 
-**Warum dieser Title:** Suchbegriff plus Ort plus Name. „Buchhaltungsservice
+**Warum dieser Title:** Suchbegriff plus Ort plus Name. „Buchhaltungsservice*
 Obernburg" ist die Wortfolge, die jemand tatsächlich eintippt; der Name steht
 hinten, weil ihn noch niemand kennt.
 
@@ -35,9 +35,9 @@ hinten, weil ihn noch niemand kennt.
 
 | Seite | Title |
 |---|---|
-| `/impressum` | Impressum \| Elena Fieder Buchhaltungsservice |
-| `/datenschutz` | Datenschutzerklärung \| Elena Fieder Buchhaltungsservice |
-| 404 | Seite nicht gefunden \| Elena Fieder Buchhaltungsservice (noindex) |
+| `/impressum` | Impressum \| Elena Fieder Buchhaltungsservice* |
+| `/datenschutz` | Datenschutzerklärung \| Elena Fieder Buchhaltungsservice* |
+| 404 | Seite nicht gefunden \| Elena Fieder Buchhaltungsservice* (noindex) |
 
 ---
 
@@ -48,9 +48,9 @@ Logo oben rechts, Kontolinie bei 34 %.
 
 | Feld | Text |
 |---|---|
-| og:title | Buchhaltungsservice Obernburg am Main \| Elena Fieder |
+| og:title | Buchhaltungsservice* Obernburg am Main \| Elena Fieder |
 | og:description | Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK), über 10 Jahre Berufserfahrung, deutschlandweit digital. |
-| og:image:alt | Elena Fieder Buchhaltungsservice: Sie fragen nach Ihren Zahlen. Ich habe sie schon. Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK) in Obernburg am Main. |
+| og:image:alt | Elena Fieder Buchhaltungsservice*: Sie fragen nach Ihren Zahlen. Ich habe sie schon. Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK) in Obernburg am Main. |
 | twitter:card | summary_large_image |
 
 ---
@@ -86,7 +86,7 @@ ersetzt.
 | Strukturierte Daten: `AccountingService`, `Person`, `FAQPage` | `app/components/StrukturierteDaten.tsx` |
 | Eigene 404-Seite mit `noindex` | `app/not-found.tsx` |
 | Sprungmarke „Zum Inhalt springen" | `app/layout.tsx` |
-| NAP (Name/Adresse/Telefon) auf jeder Seite im `<address>` | `app/components/Footer.tsx` |
+| Name, Adresse und E-Mail auf jeder Seite im `<address>` | `app/components/Footer.tsx` |
 | Stammdaten als einzige Quelle | `app/lib/firma.ts` |
 
 Überschriftengliederung geprüft: genau ein `h1`, darunter `h2` je Section,
@@ -126,10 +126,10 @@ Quelle: `app/lib/firma.ts`. Nur dort ändern.
 
 | Feld | Wert |
 |---|---|
-| Firma | Elena Fieder Buchhaltungsservice |
+| Firma | Elena Fieder Buchhaltungsservice* |
 | Inhaberin | Elena Fieder |
 | Anschrift | Siegfriedstraße 75, 63785 Obernburg am Main, Deutschland |
-| Telefon | 0172 7419091 (Link: `tel:+491727419091`) |
+| Telefon | bewusst keine Nummer angegeben |
 | E-Mail | info@elena-fieder.de |
 | Domain | elena-fieder.de |
 
@@ -213,13 +213,13 @@ Stellen abmahnfähig bzw. ein Datenschutzverstoß wäre.
 
 - [ ] **Google-Unternehmensprofil anlegen und verifizieren.** Der stärkste
       einzelne Faktor für lokale Suche. Kategorie „Buchhalter" bzw.
-      „Buchhaltungsbüro". Name, Adresse und Telefon **exakt** wie im Footer
+      „Buchhaltungsbüro". Name, Adresse und E-Mail **exakt** wie im Footer
       schreiben – Abweichungen schwächen das Signal.
 - [ ] **Google Search Console**: Property `elena-fieder.de` anlegen,
       `sitemap.xml` einreichen.
 - [ ] Bing Webmaster Tools: Sitemap übernehmen. Fünf Minuten, deckt Bing und
       die ChatGPT-Suche mit ab.
-- [ ] Adresse und Telefon in Verzeichnissen identisch eintragen: IHK, Gelbe
+- [ ] Adresse und E-Mail in Verzeichnissen identisch eintragen: IHK, Gelbe
       Seiten, Das Örtliche.
 - [ ] Kunden um **Google-Bewertungen** bitten. Dort dürfen sie als Sterne
       erscheinen – auf der eigenen Seite nicht (Begründung in Abschnitt 4).

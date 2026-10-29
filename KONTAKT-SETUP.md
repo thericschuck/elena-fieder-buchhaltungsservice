@@ -5,15 +5,16 @@ API-Key und drei Zeilen in der Formular-Komponente.
 
 ## Aktueller Stand
 
-| Datei | Zustand |
-|---|---|
-| `app/lib/kontakt.ts` | Felder, Pflichtangaben, Prüfregeln. **Wird schon benutzt** – vom Formular im Browser. |
-| `app/lib/kontakt-email.ts` | Benachrichtigungsmail an Elena, HTML und Nur-Text. Nutzereingaben sind maskiert. |
-| `app/actions/kontaktanfrage.ts` | Server Action, fertig. Prüft erneut, wertet den Honeypot aus, sendet über Resend. **Wird noch nicht aufgerufen.** |
-| `app/components/KontaktCTA.tsx` | Zeigt nach dem Absenden eine Bestätigung an, **ohne zu senden**. |
-| `.env.example` | Vorlage für die drei benötigten Variablen. |
+Das Formular ist an die Server Action angeschlossen (`useActionState`). Es
+fehlen nur noch Domain-Verifizierung und Umgebungsvariablen (Schritt 1 und 2).
 
-Das Paket `resend` (6.26.0) ist installiert.
+| Datei | Aufgabe |
+|---|---|
+| `app/lib/kontakt.ts` | Felder, Pflichtangaben, Prüfregeln (Client und Server). |
+| `app/lib/form-guard.ts` | Begrenzung je IP, je Adresse und insgesamt, Längengrenzen. |
+| `app/lib/kontakt-email.ts` | Mailvorlagen: Benachrichtigung an Elena und Bestätigung an den Absender. |
+| `app/actions/kontaktanfrage.ts` | Prüft erneut, wertet Honeypot aus, sendet zwei Mails über Resend. |
+| `app/components/KontaktCTA.tsx` | Formular mit Fehler- und Erfolgsansicht. |
 
 ## Schritt 1 – Domain in Resend verifizieren
 
@@ -39,28 +40,6 @@ KONTAKT_EMPFAENGER=elena@ihre-domain.de
 `.env.local` ist über `.gitignore` ausgeschlossen und darf nie ins Repo.
 Beim Deployment (z. B. Vercel) dieselben drei Variablen in den
 Projekteinstellungen hinterlegen – dort werden sie nicht aus `.env.local` gelesen.
-
-## Schritt 3 – Formular an die Action hängen
-
-In `app/components/KontaktCTA.tsx`:
-
-1. Import ergänzen:
-   ```ts
-   import { useActionState } from "react";
-   import { sendeKontaktanfrage } from "../actions/kontaktanfrage";
-   ```
-2. `handleSubmit` und den `sent`-State ersetzen durch:
-   ```ts
-   const [ergebnis, formAction, pending] = useActionState(sendeKontaktanfrage, {
-     status: "leer",
-   });
-   ```
-3. Am `<form>` `onSubmit={handleSubmit}` durch `action={formAction}` ersetzen,
-   die Erfolgsansicht an `ergebnis.status === "ok"` hängen und den Submit-Button
-   während `pending` deaktivieren.
-
-Die Client-Prüfung kann als Komfortschicht davor bleiben – die Action prüft
-ohnehin noch einmal selbst.
 
 ## Danach unbedingt testen
 

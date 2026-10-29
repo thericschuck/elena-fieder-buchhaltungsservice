@@ -65,7 +65,6 @@ export default function StrukturierteDaten() {
         legalName: FIRMA.name,
         url: FIRMA.url,
         email: FIRMA.email,
-        telephone: FIRMA.telefonE164,
         image: `${FIRMA.url}/opengraph-image.png`,
         logo: `${FIRMA.url}/icon.svg`,
         description:

@@ -49,8 +49,6 @@ export default function DatenschutzSeite() {
           <br />
           {FIRMA.land}
           <br />
-          Telefon: <a href={FIRMA.telefonHref}>{FIRMA.telefon}</a>
-          <br />
           E-Mail: <a href={`mailto:${FIRMA.email}`}>{FIRMA.email}</a>
         </p>
       </div>
@@ -83,23 +81,15 @@ export default function DatenschutzSeite() {
         berechtigtes Interesse liegt im sicheren und störungsfreien Betrieb der
         Website.
         <br />
-        <strong>Speicherdauer:</strong> [OFFEN – Aufbewahrungsdauer der
-        Zugriffsprotokolle nach dem gebuchten Vercel-Plan, bitte aus dem
-        Auftragsverarbeitungsvertrag übernehmen]. Eine Zusammenführung dieser
+        <strong>Speicherdauer:</strong> Die Zugriffsprotokolle werden nur
+        kurzfristig gespeichert – je nach Tarif zwischen einer Stunde und
+        längstens 30 Tagen – und danach gelöscht. Eine Zusammenführung dieser
         Daten mit anderen Datenquellen findet nicht statt.
       </p>
 
       <h3>Hosting</h3>
       <p>
-        Diese Website wird bei Vercel Inc., [OFFEN – Anschrift, bitte aus{" "}
-        <a
-          href="https://vercel.com/legal/privacy-policy"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          vercel.com/legal/privacy-policy
-        </a>{" "}
-        übernehmen], USA betrieben. Vercel verarbeitet die oben genannten Daten
+        Diese Website wird bei Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA, betrieben. Vercel verarbeitet die oben genannten Daten
         ausschließlich in meinem Auftrag. Über einen Vertrag zur
         Auftragsverarbeitung nach Art. 28 DSGVO ist sichergestellt, dass die
         Verarbeitung weisungsgebunden und im Einklang mit der DSGVO erfolgt.
@@ -197,13 +187,13 @@ export default function DatenschutzSeite() {
       </p>
       <p>
         Wenn Sie das vermeiden möchten, können Sie mich ohne Nutzung des
-        Formulars direkt per E-Mail oder Telefon erreichen. Die Kontaktdaten
+        Formulars direkt per E-Mail erreichen. Die Kontaktdaten
         finden Sie unter Ziffer 1.
       </p>
 
-      <h2>8. Kontaktaufnahme per E-Mail oder Telefon</h2>
+      <h2>8. Kontaktaufnahme per E-Mail</h2>
       <p>
-        Wenn Sie mich per E-Mail oder Telefon kontaktieren, verarbeite ich Ihre
+        Wenn Sie mich per E-Mail kontaktieren, verarbeite ich Ihre
         Angaben zur Bearbeitung Ihres Anliegens. Rechtsgrundlage ist Art. 6
         Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen, im Übrigen Art. 6
         Abs. 1 lit. f DSGVO. Bitte beachten Sie, dass unverschlüsselte E-Mails
