@@ -7,25 +7,22 @@ import StimmenKarte, { type Stimme } from "./ui/StimmenKarte";
 import { ArrowRight } from "./ui/Icons";
 
 /*
-  Echte Kundenstimmen, von Elena geliefert - keine Platzhalter.
+  Kundenstimmen im Wortlaut der finalen Website-Texte ("Was Mandanten ueber die
+  Zusammenarbeit sagen"): Ruslan Chukhliebov, Fotostudio Belichtungswert,
+  Inna W., Viktor - in dieser Reihenfolge. Bitte hier keine weiteren Stimmen
+  erfinden oder ergaenzen und den Wortlaut nicht aendern, ohne dass Elena den
+  neuen Text geliefert hat. Carola Stulz (Kollegin, frueher hier) steht in den
+  finalen Texten nicht mehr und ist entfernt.
 
-  Diese vier sind der vollstaendige, bestaetigte Bestand (Stand 07.09.2026).
-  Bitte hier keine weiteren Stimmen erfinden oder ergaenzen, ohne dass Elena
-  den Wortlaut vorher geliefert hat - auch keine, die "plausibel" klingen.
-  Frueher stand hier zusaetzlich "Inna W.", die ist mit dieser Bestandsliste
-  wieder herausgenommen, weil sie nicht Teil der bestaetigten vier ist.
-
-  Redaktionell angefasst wurde nur das Minimum: Bei Viktor ist die Anrede der
-  E-Mail ("Hallo liebe Elena") weggefallen, sonst ist der Wortlaut unveraendert.
-  Beim Kuerzen bitte nichts hinzuerfinden und die Absatzfolge nicht umstellen -
-  eingeklappt ist genau der erste Absatz sichtbar, es wird also nichts
-  vorgezogen, was im Original hinten steht.
+  Die Texte weichen teils von den frueher hier stehenden Fassungen ab (Ruslan
+  ohne die Angabe zum Autohandel, Fotostudio auf einen Absatz gekuerzt) - die
+  Vorlage ist massgeblich.
 
   DSGVO: Vor dem Live-Gang von jedem Namensgeber eine formlose schriftliche
-  Freigabe einholen (E-Mail reicht) und ablegen. Viktor ist bereits nur mit
-  Vornamen genannt; "Fotostudio Belichtungswert", Ruslan Chukhliebov und
-  Carola Stulz sind mit vollem Namen genannt und brauchen die Freigabe des
-  jeweiligen Inhabers.
+  Freigabe einholen (E-Mail reicht) und ablegen. Viktor und Inna sind nur mit
+  Vornamen bzw. abgekuerztem Nachnamen genannt; "Fotostudio Belichtungswert"
+  und Ruslan Chukhliebov sind mit vollem Namen genannt und brauchen die
+  Freigabe des jeweiligen Inhabers.
 
   Die Initialen stehen als Feld in den Daten und werden nicht aus dem Namen
   berechnet: aus "Fotostudio Belichtungswert" wuerde sonst nur "F".
@@ -33,9 +30,19 @@ import { ArrowRight } from "./ui/Icons";
 const STIMMEN: Stimme[] = [
   {
     absaetze: [
-      "Wir arbeiten inzwischen seit rund zwei Jahren zusammen und sind mit der Zusammenarbeit sehr zufrieden. Besonders schätzen wir die hohe Zuverlässigkeit, die schnelle Erreichbarkeit und die stets zeitnahe Rückmeldung bei Fragen oder Anliegen.",
-      "Auch das persönliche Vertrauen spielt für uns eine große Rolle: Wir fühlen uns jederzeit kompetent betreut und können uns darauf verlassen, dass alles sorgfältig, professionell und zuverlässig erledigt wird.",
-      "Eine sehr angenehme und vertrauensvolle Zusammenarbeit, die wir uneingeschränkt weiterempfehlen können.",
+      "Wir arbeiten seit über einem Jahr mit Elena zusammen und sind mit der Zusammenarbeit rundum zufrieden.",
+      "Unser Geschäftsfeld ist nicht ganz unkompliziert, doch Elena meistert auch anspruchsvolle Aufgaben mit großer Kompetenz und Professionalität. Sie ist eine echte Expertin auf ihrem Gebiet.",
+      "Alle Fragen werden schnell geklärt und verständlich erklärt. Ihre Arbeit ist stets professionell, sorgfältig und zuverlässig.",
+      "Besonders schätzen wir die schnelle, persönliche und unkomplizierte Kommunikation. Elena ist für uns jederzeit unkompliziert über WhatsApp erreichbar, ohne lange E-Mail-Verläufe oder Wartezeiten. Wenn es wirklich dringend ist, steht sie uns auch außerhalb der üblichen Geschäftszeiten oder am Wochenende zur Seite. Das ist heutzutage alles andere als selbstverständlich.",
+      "Wir fühlen uns bei Elena bestens betreut, schätzen die vertrauensvolle Zusammenarbeit sehr und können sie uneingeschränkt weiterempfehlen!",
+    ],
+    name: "Ruslan Chukhliebov",
+    initialen: "RC",
+    meta: null,
+  },
+  {
+    absaetze: [
+      "Wir arbeiten inzwischen seit rund zwei Jahren zusammen und sind mit der Zusammenarbeit sehr zufrieden. Besonders schätzen wir die hohe Zuverlässigkeit, die schnelle Erreichbarkeit und die stets zeitnahe Rückmeldung bei Fragen oder Anliegen. Auch das persönliche Vertrauen spielt für uns eine große Rolle.",
     ],
     name: "Fotostudio Belichtungswert",
     initialen: "FB",
@@ -43,31 +50,19 @@ const STIMMEN: Stimme[] = [
   },
   {
     absaetze: [
-      "Elena Fieder war lange Zeit meine liebe Kollegin. Mit ihr zusammen zu Arbeiten macht sehr viel Freude. Sie ist ein außerordentlich freundlicher, aufgeschlossener, absolut hilfsbereiter Mensch. Sie hat ein großes Wissen und ist in ihrem Fachgebiet absolut kompetent. Ich kann Elena Fieder einfach jedem weiterempfehlen. Sie macht einen großartigen Job.",
+      "Eine sehr professionelle und gewissenhafte Arbeitsweise. Es wird genau hingeschaut. Die vereinbarten Termine werden zuverlässig eingehalten. Sorgfalt und Verantwortungsbewusstsein haben dabei einen hohen Stellenwert. Das schafft Vertrauen.",
     ],
-    name: "Carola Stulz",
-    initialen: "CS",
+    name: "Inna W.",
+    initialen: "IW",
     meta: null,
   },
   {
     absaetze: [
-      "Ich möchte mich für die zuverlässige, aber vor allem die vertrauensvolle Zusammenarbeit der letzten zwei Jahre bei Dir bedanken. Nach längerer Suche nach einem zuverlässigen Partner, bin ich froh auf Dich getroffen zu sein. Ich danke für die professionelle Zusammenarbeit.",
+      "Nach längerer Suche nach einem zuverlässigen Partner bin ich froh, auf Dich getroffen zu sein. Ich danke für die professionelle Zusammenarbeit.",
     ],
     name: "Viktor",
     initialen: "V",
     meta: "Mandant seit zwei Jahren",
-  },
-  {
-    absaetze: [
-      "Wir arbeiten seit mehr als einem Jahr mit Elena zusammen und sind mit der Zusammenarbeit sehr zufrieden.",
-      "Ich habe ein nicht ganz einfaches Geschäftsfeld. Ich verkaufe Autos, wir haben viele verschiedene Vorgänge und sehr viele Belege. Außerdem arbeiten wir teilweise mit der Differenzbesteuerung und teilweise mit der normalen Besteuerung. Auf den ersten Blick ist das alles nicht so einfach, aber Elena meistert diese Aufgaben wirklich sehr gut und ist eine echte Profi auf ihrem Gebiet.",
-      "Alle Fragen werden schnell besprochen und verständlich erklärt. Die Arbeit wird professionell, schnell und sehr zuverlässig erledigt.",
-      "Besonders gut gefällt uns die schnelle und unkomplizierte Kommunikation. Wir können Elena jederzeit einfach über WhatsApp erreichen, ohne lange E-Mail-Verläufe und ohne lange auf eine Antwort warten zu müssen. Wenn es wirklich notwendig ist, können wir auch außerhalb der normalen Arbeitszeiten oder am Wochenende Kontakt aufnehmen.",
-      "Die Zusammenarbeit funktioniert einfach sehr gut. Wir sind mit Elena sehr zufrieden und können sie absolut weiterempfehlen.",
-    ],
-    name: "Ruslan Chukhliebov",
-    initialen: "RC",
-    meta: "Mandant seit über einem Jahr",
   },
 ];
 
@@ -126,13 +121,13 @@ export default function Testimonials() {
             Kundenstimmen
           </p>
           <h3 className="mt-4 font-headline text-[1.1rem] leading-[1.3] tracking-[-0.015em] text-primary lg:text-[1.25rem]">
-            Was Mandanten sagen
+            Was Mandanten über die Zusammenarbeit sagen
           </h3>
         </div>
         <Reveal className="mt-6 lg:mt-0 lg:pl-10">
           <p className="max-w-[42rem] text-[15px] leading-[1.6] text-secondary">
-            Rückmeldungen im Wortlaut, nichts umgeschrieben
-            {paginierbarMobil ? " – mit dem Pfeil geht’s weiter." : "."}
+            Vertrauen zeigt sich im Alltag – durch Zuverlässigkeit,
+            Erreichbarkeit und sorgfältige Arbeit.
           </p>
         </Reveal>
       </div>

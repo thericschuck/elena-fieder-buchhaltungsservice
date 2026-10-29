@@ -26,16 +26,12 @@ export default function Fragen() {
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div className="lg:grid lg:grid-cols-[var(--rail-x)_1fr]">
           <p className="text-[11px] font-medium tracking-[0.2em] text-secondary uppercase lg:pr-10 lg:text-right">
-            Häufige Fragen
+            FAQ
           </p>
           <Reveal className="mt-4 lg:mt-0 lg:pl-10">
             <h2 className="font-headline text-[clamp(1.85rem,3.6vw,2.9rem)] leading-[1.1] tracking-[-0.02em] text-primary">
-              Das werde ich oft gefragt.
+              Häufige Fragen
             </h2>
-            <p className="mt-4 max-w-[38rem] text-[17px] leading-[1.65] text-secondary">
-              Wenn Ihre Frage nicht dabei ist, stellen Sie sie im Erstgespräch –
-              das kostet nichts.
-            </p>
           </Reveal>
         </div>
 

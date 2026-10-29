@@ -204,7 +204,7 @@ export default function Header() {
               }}
               className="gold-flaeche hidden rounded-md px-5 py-2.5 text-[15px] font-medium text-text hover:-translate-y-0.5 sm:block"
             >
-              Erstgespräch
+              Erstgespräch anfragen
             </a>
 
             <button
@@ -294,7 +294,7 @@ export default function Header() {
                 }}
                 className="gold-flaeche mt-8 block rounded-md px-6 py-4 text-center text-base font-medium text-text"
               >
-                Kostenloses Erstgespräch
+                Persönliches Erstgespräch anfragen
               </a>
             </nav>
           </motion.div>

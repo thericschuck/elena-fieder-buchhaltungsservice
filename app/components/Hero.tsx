@@ -42,7 +42,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={rootRef}
-      className="relative pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="relative pt-28 pb-12 lg:pt-32 lg:pb-14"
     >
       <Rail tone="light" />
 
@@ -61,41 +61,63 @@ export default function Hero() {
           hellem Scrim kippt es andersherum. Text auf ruhigem Grund und Bild
           daneben ist die einzige Fassung, in der beides bestehen bleibt.
         */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,40%)] lg:items-stretch lg:gap-12">
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,40%)] lg:items-stretch lg:gap-10">
           <div>
             <div data-hero-zeile>
               <span
                 aria-hidden="true"
                 className="gold-linie block h-px w-20"
               />
-              <p className="mt-4 text-[11px] font-medium tracking-[0.2em] text-secondary uppercase">
-                Buchhaltungsservice
+              <p className="mt-3 text-[11px] font-medium tracking-[0.2em] text-secondary uppercase">
+                Elena Fieder | Bilanzbuchhalterin (IHK)
+              </p>
+              <p className="mt-1.5 text-[13px] leading-[1.5] text-secondary">
+                Buchen laufender Geschäftsvorfälle · persönlich &amp; digital
               </p>
             </div>
 
             <h1
               data-hero-zeile
-              className="mt-8 font-headline text-[clamp(2.3rem,5.4vw,4.4rem)] leading-[1.03] tracking-[-0.03em] text-primary lg:mt-10"
+              className="mt-5 font-headline text-[clamp(2rem,4.2vw,3.4rem)] leading-[1.05] tracking-[-0.03em] text-primary lg:mt-6"
             >
-              Sie fragen nach Ihren Zahlen.
+              Mehr Klarheit in Ihren Zahlen.
               <span className="mt-1.5 block text-brand-tief">
-                Ich habe sie schon.
+                Mehr Zeit für Ihr Unternehmen.
               </span>
             </h1>
 
+            <div
+              data-hero-zeile
+              className="mt-5 max-w-[38rem] space-y-3 text-[16px] leading-[1.55] text-secondary lg:mt-6"
+            >
+              <p>
+                Professionelle Unterstützung beim Buchen laufender
+                Geschäftsvorfälle – für Unternehmen und Freiberufler, die Wert
+                auf Qualität, Verlässlichkeit und persönliche Betreuung legen.
+              </p>
+              <p>
+                Besondere Erfahrung in Bau, Handwerk und projektorientierten
+                Unternehmen sowie in der Betreuung von Freiberuflern und
+                Dienstleistern.
+              </p>
+            </div>
+
             <p
               data-hero-zeile
-              className="mt-8 max-w-[38rem] text-[17px] leading-[1.65] text-secondary sm:text-lg lg:mt-10"
+              className="mt-4 max-w-[38rem] text-[14px] leading-[1.55] text-primary"
             >
-              Ich übernehme die laufende Buchhaltung für Baubranche, Handwerk,
-              Handel, Industrie, Dienstleister und Freiberufler – persönlich,
-              digital, mit kurzen Wegen. Am Monatsende wissen Sie, wo Sie
-              stehen, nicht erst wenn Ihr Steuerberater sich meldet.
+              Bilanzbuchhalterin (IHK) · Bachelor Professional in
+              Bilanzbuchhaltung · über 10 Jahre Berufserfahrung
+              <br />
+              <span className="text-secondary">
+                Obernburg am Main · deutschlandweit digital · Deutsch &amp;
+                Russisch
+              </span>
             </p>
 
             <div
               data-hero-zeile
-              className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
+              className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
               <a
                 href="#kontakt"
@@ -103,15 +125,13 @@ export default function Hero() {
                   e.preventDefault();
                   scrollTo("#kontakt");
                 }}
-                className="gold-flaeche group inline-flex items-center justify-center gap-2.5 rounded-md px-7 py-4 text-base font-medium text-text hover:-translate-y-0.5"
+                className="gold-flaeche group inline-flex items-center justify-center gap-2.5 rounded-md px-6 py-3.5 text-base font-medium text-text hover:-translate-y-0.5"
               >
-                Kostenloses Erstgespräch
+                Persönliches Erstgespräch anfragen
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
               <p className="text-sm leading-relaxed text-secondary">
-                20 Minuten, unverbindlich.
-                <br className="hidden sm:block" /> Antwort in der Regel am
-                selben Werktag.
+                Ca. 20 Minuten · kostenfrei · unverbindlich
               </p>
             </div>
           </div>
@@ -122,7 +142,7 @@ export default function Hero() {
               Arbeitsplatz sitzt und links nur Wand. */}
           <div
             data-panel
-            className="bleed-rechts relative mt-12 h-64 sm:h-80 lg:mt-0 lg:h-auto lg:min-h-[30rem]"
+            className="bleed-rechts relative mt-8 h-56 sm:h-72 lg:mt-0 lg:h-auto lg:min-h-[24rem]"
           >
             <Image
               src={buero}

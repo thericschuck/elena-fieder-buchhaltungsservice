@@ -15,15 +15,14 @@ So sieht der Eintrag aus:
 ```
 elena-fieder.de
 Buchhaltungsservice Obernburg am Main | Elena Fieder
-Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie.
-Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit
-digital. Kostenloses Erstgespräch.
+Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler.
+Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit digital.
 ```
 
 | Feld | Text | Länge |
 |---|---|---|
 | Title | Buchhaltungsservice Obernburg am Main \| Elena Fieder | 52 Zeichen |
-| Description | Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit digital. Kostenloses Erstgespräch. | 158 Zeichen |
+| Description | Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit digital. | 142 Zeichen |
 
 Google kappt Titles ab rund 60 Zeichen und Descriptions ab rund 160 – beides
 liegt bewusst knapp darunter, damit nichts abgeschnitten wird.
@@ -50,7 +49,7 @@ Logo oben rechts, Kontolinie bei 34 %.
 | Feld | Text |
 |---|---|
 | og:title | Buchhaltungsservice Obernburg am Main \| Elena Fieder |
-| og:description | Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK), über 10 Jahre Erfahrung, deutschlandweit digital. |
+| og:description | Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK), über 10 Jahre Berufserfahrung, deutschlandweit digital. |
 | og:image:alt | Elena Fieder Buchhaltungsservice: Sie fragen nach Ihren Zahlen. Ich habe sie schon. Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK) in Obernburg am Main. |
 | twitter:card | summary_large_image |
 
@@ -62,25 +61,15 @@ Neu auf der Seite, zwischen „Über mich" und „So fangen wir an". Sie erfüll
 zwei Zwecke: sie räumt Einwände vor dem Kontaktformular aus, und sie beantwortet
 Suchanfragen in Frageform.
 
-Alle acht Antworten stehen in `app/lib/faq.ts` – **eine** Quelle für die
-sichtbare Section und für das FAQPage-Markup. Google verlangt, dass die
-ausgezeichnete Antwort wörtlich der sichtbaren entspricht; zwei Fassungen
-würden das beim ersten Redigieren verletzen.
+Stand Textfassung "Finale Website-Texte": fünf Fragen, Wortlaut in
+`app/lib/faq.ts` (eine Quelle für Section und FAQPage-Markup). Die frühere
+Fassung mit acht Fragen (u. a. Software, Antwortzeit, Erstgespräch) ist
+ersetzt.
 
-**Diese Antworten bitte durchlesen – sie sprechen in Elenas Ich-Form:**
-
-1. **Was kostet das Erstgespräch?** Nichts. Wir telefonieren rund 20 Minuten, Sie erzählen, wie Ihre Buchhaltung heute läuft, und ich sage Ihnen, was ich übernehmen kann. Das Gespräch ist kostenlos und unverbindlich, es wird nichts unterschrieben.
-2. **Was kostet die laufende Buchhaltung?** Das hängt davon ab, wie viele Belege anfallen und was Sie abgeben möchten. Deshalb gibt es hier keine Pauschale: Nach dem Erstgespräch kenne ich den Umfang und mache Ihnen ein Angebot, das Sie prüfen können.
-3. **Übernehmen Sie auch Jahresabschluss und Steuererklärung?** Nein. Jahresabschlüsse, Bilanzen, Steuererklärungen und steuerliche Beratung sind nach § 6 Steuerberatungsgesetz Steuerberatern vorbehalten und bleiben bei Ihrem Steuerberater. Bearbeitet habe ich diese Bereiche im Angestelltenverhältnis unter Aufsicht eines Steuerberaters – deshalb weiß ich, was er am Jahresende braucht, und buche das ganze Jahr über entsprechend vor.
-4. **Mit welcher Software arbeiten Sie?** Mit DATEV, Lexware, Storetax, Monitor ERP und Agenda. Wenn Sie mit einem anderen Programm arbeiten, arbeite ich mich ein.
-5. **Arbeiten Sie nur in Obernburg und Umgebung?** Der Sitz ist Obernburg am Main. Gearbeitet wird deutschlandweit digital – für die laufende Buchhaltung ist es unerheblich, wo Ihr Unternehmen sitzt.
-6. **Wie kommen meine Belege zu Ihnen?** Digital, wenn es geht. Wie genau, legen wir bei der Einrichtung gemeinsam fest – so einfach wie möglich und so, dass es in Ihren Arbeitsalltag passt.
-7. **Für welche Branchen arbeiten Sie?** Baubranche, Handwerk, Handel, Industrie, Dienstleistung und Freiberufler. In diesen Bereichen habe ich gebucht. Steht Ihre Branche nicht dabei, fragen Sie trotzdem – meistens passt es.
-8. **Wie schnell bekomme ich eine Antwort?** In der Regel am selben Werktag. Kurze Kommunikationswege sind mir wichtig: Wenn bei einem Beleg etwas unklar ist, rufe ich an, statt es irgendwie zu buchen.
-
-Antwort 2 ist die einzige ohne Belegstelle in den Unterlagen – dort steht keine
-Preisinformation. Die Formulierung sagt deshalb bewusst nur, wovon der Preis
-abhängt. Falls Elena einen Einstiegspreis nennen will, ist das die Stelle dafür.
+> Achtung: `app/opengraph-image.png` (und `twitter-image.png`) enthalten noch
+> den alten Text „Sie fragen nach Ihren Zahlen … Laufende Buchhaltung für Bau,
+> Handwerk, Handel und Industrie“. Bild muss neu erzeugt werden; die zugehörigen
+> `*.alt.txt` bleiben bis dahin bewusst unverändert, damit sie zum Bild passen.
 
 ---
 

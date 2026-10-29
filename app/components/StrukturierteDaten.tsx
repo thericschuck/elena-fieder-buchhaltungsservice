@@ -35,22 +35,23 @@ import { FRAGEN } from "../lib/faq";
 const ID_FIRMA = `${FIRMA.url}/#buchhaltungsservice`;
 const ID_PERSON = `${FIRMA.url}/#elena-fieder`;
 
+/* Wortlaut wie auf der Seite (Branchen und Leistungen). Handel, Industrie,
+   BWA, Finanzbuchhaltung und Jahresabschluss stehen in den finalen Texten
+   nicht mehr und duerfen auch hier nicht auftauchen. */
 const BRANCHEN = [
-  "Baubranche",
+  "Bau",
   "Handwerk",
-  "Handel",
-  "Industrie",
-  "Dienstleistung",
+  "Projektorientierte Unternehmen",
   "Freiberufler",
+  "Dienstleister",
 ];
 
 const LEISTUNGEN = [
-  "Laufende Finanzbuchhaltung",
-  "Offene Posten und Zahlungsüberwachung",
-  "BWA und betriebswirtschaftliche Auswertungen",
-  "Prozessoptimierung und digitale Organisation",
-  "Bau- und projektbezogene Abrechnung",
-  "Vorbereitung der Unterlagen für den Steuerberater",
+  "Buchen laufender Geschäftsvorfälle",
+  "Offene Posten & Zahlungsübersicht",
+  "Digitale Belegorganisation",
+  "Projekt- und objektbezogene Zuordnung",
+  "Bereitstellung für Ihren Steuerberater",
 ];
 
 export default function StrukturierteDaten() {
@@ -68,7 +69,7 @@ export default function StrukturierteDaten() {
         image: `${FIRMA.url}/opengraph-image.png`,
         logo: `${FIRMA.url}/icon.svg`,
         description:
-          "Laufende Buchhaltung für Baubranche, Handwerk, Handel, Industrie, Dienstleister und Freiberufler. Bilanzbuchhalterin (IHK) mit über 10 Jahren Berufserfahrung, Sitz in Obernburg am Main, deutschlandweit digital.",
+          "Buchen laufender Geschäftsvorfälle für Bau, Handwerk, projektorientierte Unternehmen, Freiberufler und Dienstleister. Bilanzbuchhalterin (IHK) mit über 10 Jahren Berufserfahrung, Sitz in Obernburg am Main, deutschlandweit digital.",
         address: {
           "@type": "PostalAddress",
           streetAddress: FIRMA.strasse,
@@ -96,15 +97,15 @@ export default function StrukturierteDaten() {
         },
         makesOffer: {
           "@type": "Offer",
-          name: "Kostenloses Erstgespräch",
+          name: "Persönliches Erstgespräch",
           description:
-            "20 Minuten Telefonat, unverbindlich und kostenlos.",
+            "Ca. 20 Minuten, kostenfrei und unverbindlich.",
           price: "0",
           priceCurrency: "EUR",
         },
         keywords: BRANCHEN.join(", "),
         disambiguatingDescription:
-          "Buchhaltungsservice nach § 6 StBerG. Steuerberatung, Jahresabschlüsse und Steuererklärungen sind Steuerberatern vorbehalten und nicht Teil des Leistungsangebots.",
+          "Die Dienstleistungen aus dem Bereich Buchhaltung unterliegen den Einschränkungen des § 6 Nr. 3 und 4 StBerG: angeboten wird nur das Buchen der laufenden Geschäftsvorfälle und die Belegverarbeitung. Keine Steuer- oder Rechtsberatung.",
       },
       {
         "@type": "Person",
@@ -112,7 +113,7 @@ export default function StrukturierteDaten() {
         name: FIRMA.inhaberin,
         jobTitle: "Bilanzbuchhalterin (IHK)",
         description:
-          "Bachelor Professional in Bilanzbuchhaltung (IHK), über 10 Jahre Berufserfahrung in Buchhaltung und Jahresabschluss.",
+          "Bachelor Professional in Bilanzbuchhaltung (IHK), über 10 Jahre Berufserfahrung im kaufmännischen Rechnungswesen.",
         worksFor: { "@id": ID_FIRMA },
         knowsLanguage: ["de", "ru"],
         hasCredential: {

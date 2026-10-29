@@ -11,17 +11,8 @@ import KontaktCTA from "./components/KontaktCTA";
 import Footer from "./components/Footer";
 
 /*
-  Reihenfolge nach der Sitemap aus dem Strategiegespraech (Abschnitt 5).
-
-  TrustUeberMich traegt inzwischen drei Kapitel in einer Section: Person,
-  Qualifikation samt Berufspraxis und die Kundenstimmen. Vorher waren das drei
-  eigene Sections, die Abschluss, Berufsjahre und Sprachen mehrfach wiederholt
-  haben - die Seite war dadurch deutlich laenger, ohne mehr zu sagen.
-
-  Fragen steht bewusst vor Ablauf und nicht am Seitenende: die Antworten
-  raeumen Einwaende aus, und danach folgt direkt der naechste Schritt.
-  Der Farbton der Section (brand-hell) bricht ausserdem die Folge
-  Weiss - Creme auf, die sonst hier entstuende.
+  Reihenfolge wie bisher (Sitemap aus dem Strategiegespraech). Nur der Wortlaut
+  stammt aus den finalen Website-Texten.
 
   Ablauf muss direkt ueber KontaktCTA stehen: der dunkle Kontaktblock stuft
   sich per clip-path an der Kontolinie ab und legt dabei die weisse Flaeche der

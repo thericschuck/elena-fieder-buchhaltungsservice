@@ -1,91 +1,40 @@
 import Rail from "./ui/Rail";
 import Reveal from "./ui/Reveal";
-import {
-  ChartBar,
-  Mauer,
-  Karte,
-  Ordner,
-  Receipt,
-  Sliders,
-  Users,
-  Waage,
-} from "./ui/Icons";
+import { Mauer, Ordner, Receipt, Sliders, Users } from "./ui/Icons";
 
 /**
- * Reihenfolge ist inhaltlich, nicht dekorativ: Position 01 bis 04 entsprechen
- * exakt der Priorisierung aus dem Strategiegespraech (4.1). 05 und 06 kommen
- * aus dem Leistungsdokument und waren dort nicht priorisiert - sie stehen
- * deshalb hinten, nicht weil sie weniger wichtig waeren.
- *
- * Die Unterpunkte sind die woertlichen Positionen aus "Meine Leistungen".
- * Nicht kuerzen: sie sind das, was Elena tatsaechlich anbietet, und decken
- * gemeinsam alle neun Punkte des Dokuments ab.
+ * Wortlaut aus den finalen Website-Texten, Abschnitt "Meine Leistungen" -
+ * fuenf Leistungen, je ein Beschreibungstext. Nicht zusammenfassen, nicht
+ * ergaenzen und keine Unterpunkte oder Nutzen-Saetze hinzufuegen: die Liste ist
+ * bewusst eng gehalten (Hilfeleistung in Steuersachen nach § 6 Nr. 3 und 4
+ * StBerG). Begriffe wie BWA, Kontenabstimmung, Finanzbuchhaltung oder
+ * Jahresabschluss gehoeren nicht in dieses Angebot.
  */
 const LEISTUNGEN = [
   {
     Icon: Receipt,
-    name: "Laufende Finanzbuchhaltung",
-    nutzen:
-      "Ihre Belege sind Monat für Monat gebucht, statt sich bis zum Jahresabschluss zu stapeln.",
-    punkte: [
-      { Icon: Receipt, text: "Eingangs- und Ausgangsrechnungen" },
-      { Icon: Karte, text: "Bank, Kasse und Kreditkarten" },
-      { Icon: Waage, text: "Kontenabstimmung" },
-    ],
+    name: "Buchen laufender Geschäftsvorfälle",
+    text: "Regelmäßige Erfassung Ihrer laufenden Geschäftsvorgänge auf Grundlage der von Ihnen bereitgestellten Unterlagen. Dazu gehören insbesondere Eingangs- und Ausgangsrechnungen, Bankbewegungen, Kassenbewegungen, Kreditkartenbewegungen sowie die laufende Zuordnung der Geschäftsvorfälle.",
   },
   {
     Icon: Users,
-    name: "Offene Posten und Zahlungsüberwachung",
-    nutzen:
-      "Sie sehen auf einen Blick, wer noch zahlen muss und welche Rechnung als Nächstes fällig ist.",
-    punkte: [
-      { Icon: Users, text: "Debitoren- und Kreditorenübersicht" },
-      { Icon: Receipt, text: "Offene Posten je Kunde und Lieferant" },
-      { Icon: Waage, text: "Zahlungsüberwachung und Fälligkeiten" },
-    ],
-  },
-  {
-    Icon: ChartBar,
-    name: "BWA und betriebswirtschaftliche Auswertungen",
-    nutzen:
-      "Monatliche Auswertungen aus Ihrer laufenden Buchhaltung, damit Sie und Ihr Steuerberater auf derselben Zahlenbasis arbeiten.",
-    punkte: [
-      { Icon: ChartBar, text: "BWA je Monat" },
-      { Icon: Waage, text: "Auswertungen nach Bedarf" },
-    ],
+    name: "Offene Posten & Zahlungsübersicht",
+    text: "Übersicht der im Rahmen der laufenden Buchführung erfassten offenen Kunden- und Lieferantenvorgänge sowie organisatorische Nachverfolgung von Zahlungseingängen, Zahlungsausgängen und Fälligkeiten.",
   },
   {
     Icon: Sliders,
-    name: "Prozessoptimierung und digitale Organisation",
-    nutzen:
-      "Belegübergabe, Ablage, Reisekosten: Wir bringen Ihre Abläufe digital in Form, damit weniger Papier liegen bleibt.",
-    punkte: [
-      { Icon: Receipt, text: "Reisekostenabrechnungen" },
-      { Icon: Sliders, text: "Digitale Belegübergabe und Ablage" },
-    ],
+    name: "Digitale Belegorganisation",
+    text: "Gemeinsam schaffen wir einen einfachen und verlässlichen Ablauf für die digitale Übergabe und Organisation Ihrer laufenden Unterlagen.",
   },
   {
     Icon: Mauer,
-    name: "Bau- und projektbezogene Abrechnung",
-    nutzen:
-      "Damit am Ende eines Bauvorhabens nachvollziehbar ist, was auf welchem Objekt gelaufen ist – und welche Abschlagszahlung schon drin steckt.",
-    punkte: [
-      {
-        Icon: Receipt,
-        text: "Anzahlungen, Abschlags- und Schlussrechnungen",
-      },
-      { Icon: Mauer, text: "Projekt- und objektbezogene Zuordnung" },
-    ],
+    name: "Projekt- und objektbezogene Zuordnung",
+    text: "Laufende Geschäftsvorfälle können nach Ihren Vorgaben den entsprechenden Projekten oder Objekten zugeordnet werden. Das schafft insbesondere bei Bau-, Handwerks- und projektorientierten Unternehmen mehr Transparenz.",
   },
   {
     Icon: Ordner,
-    name: "Vorbereitung der Unterlagen für den Steuerberater",
-    nutzen:
-      "Ihr Steuerberater bekommt einen abgestimmten Stand statt eines Belegkartons – das kürzt Rückfragen und Beraterstunden.",
-    punkte: [
-      { Icon: Ordner, text: "Aufbereitete Unterlagen zum Jahresende" },
-      { Icon: Waage, text: "Abgestimmte Konten und Salden" },
-    ],
+    name: "Bereitstellung für Ihren Steuerberater",
+    text: "Die im Rahmen meiner Tätigkeit bearbeiteten Unterlagen werden strukturiert und nachvollziehbar für die weitere Bearbeitung durch Ihren Steuerberater bereitgestellt.",
   },
 ];
 
@@ -104,17 +53,17 @@ export default function Leistungen() {
           </p>
           <Reveal className="mt-4 lg:mt-0 lg:pl-10">
             <h2 className="font-headline text-[clamp(1.85rem,3.6vw,2.9rem)] leading-[1.1] tracking-[-0.02em] text-primary">
-              Was ich in Ihrer Buchhaltung übernehme.
+              Meine Leistungen
             </h2>
             <p className="mt-4 max-w-[38rem] text-[17px] leading-[1.65] text-secondary">
-              Sechs Bereiche, geordnet nach dem, was am häufigsten anfällt. Sie
-              entscheiden, was Sie davon abgeben – gern auch alles.
+              Klar abgegrenzt, transparent und auf laufende Geschäftsvorgänge
+              ausgerichtet.
             </p>
           </Reveal>
         </div>
 
         <ol className="mt-14 lg:mt-20">
-          {LEISTUNGEN.map(({ Icon, name, nutzen, punkte }, i) => (
+          {LEISTUNGEN.map(({ Icon, name, text }, i) => (
             <li
               key={name}
               className="group border-t border-primary/10 py-8 lg:grid lg:grid-cols-[var(--rail-x)_1fr] lg:py-11"
@@ -134,56 +83,12 @@ export default function Leistungen() {
                 </h3>
                 <span className="mt-3 block h-px w-10 bg-primary/15 transition-all duration-300 group-hover:w-16 group-hover:bg-gold-tief" />
                 <p className="mt-4 max-w-[36rem] text-[17px] leading-[1.6] text-secondary">
-                  {nutzen}
+                  {text}
                 </p>
-
-                {/* Die konkreten Positionen darunter: der Nutzen-Satz sagt,
-                    warum – diese Liste sagt, was genau im Paket steckt. */}
-                <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2.5">
-                  {punkte.map(({ Icon: PunktIcon, text }) => (
-                    <li
-                      key={text}
-                      className="flex items-center gap-2.5 text-[15px] leading-[1.4] text-text"
-                    >
-                      <PunktIcon className="h-[17px] w-[17px] shrink-0 text-gold-tief" />
-                      {text}
-                    </li>
-                  ))}
-                </ul>
               </Reveal>
             </li>
           ))}
         </ol>
-
-        <div className="border-t border-primary/10 pt-8 lg:grid lg:grid-cols-[var(--rail-x)_1fr]">
-          <div aria-hidden="true" />
-          <div className="max-w-[42rem] lg:pl-10">
-            <p className="text-sm leading-[1.6] text-secondary">
-              Weitere Tätigkeiten auf Anfrage.
-            </p>
-
-            {/*
-              Hinweis auf die Angestellten-Erfahrung, wie im Leistungsdokument
-              formuliert. Die Reihenfolge der beiden Saetze ist entscheidend:
-              erst die Grenze, dann die Erfahrung. Umgedreht liest es sich wie
-              ein verdecktes Angebot - und Jahresabschluss, Bilanz und
-              Steuererklaerung sind nach § 6 StBerG Steuerberatern vorbehalten.
-            */}
-            <p className="mt-4 border-l-2 border-gold-tief pl-4 text-sm leading-[1.6] text-secondary">
-              Jahresabschlüsse, Bilanzen und Steuererklärungen darf ich nicht
-              anbieten – die bleiben bei Ihrem Steuerberater. Bearbeitet habe
-              ich sie trotzdem: im Angestelltenverhältnis, unter Aufsicht eines
-              Steuerberaters. Was das für Sie heißt, steht{" "}
-              <a
-                href="#ueber-mich"
-                className="text-primary underline decoration-gold-tief decoration-2 underline-offset-4"
-              >
-                unter „Über mich“
-              </a>
-              .
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

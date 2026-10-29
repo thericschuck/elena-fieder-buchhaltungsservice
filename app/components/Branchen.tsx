@@ -5,53 +5,32 @@ import type { ComponentType, SVGProps } from "react";
 import { useReducedMotion } from "framer-motion";
 import Rail from "./ui/Rail";
 import Reveal from "./ui/Reveal";
-import {
-  Aktentasche,
-  Hammer,
-  Industrie,
-  Laden,
-  Mauer,
-  Person,
-} from "./ui/Icons";
+import { Mauer, Ordner, Person } from "./ui/Icons";
 
 /**
- * Die sechs Branchen stehen woertlich so im Leistungsdokument unter
- * "Erfahrungen". Nicht zusammenfassen und nicht ergaenzen - die Liste ist
- * Elenas eigene Angabe, kein Marketing-Sortiment.
- *
- * Die Kurzzeilen beschreiben bewusst die Lage des Kunden, nicht eine
- * zusaetzliche Leistung. Alles, was Elena tut, steht in der Leistungs-Section.
+ * Wortlaut aus den finalen Website-Texten, Abschnitt "Branchen, in denen
+ * Erfahrung zaehlt": drei Bereiche. Handel und Industrie stehen dort bewusst
+ * nicht mehr - nicht wieder ergaenzen. Die Texte beschreiben Erfahrung und
+ * Lage des Kunden, keine zusaetzliche Leistung.
  */
 const BRANCHEN = [
   {
     Icon: Mauer,
-    name: "Baubranche",
-    zeile: "Abschlagsrechnungen, Objektzuordnung, viele Nachweise pro Projekt.",
+    name: "Bau & Handwerk",
+    zeile:
+      "Mehrere Projekte, verschiedene Objekte und zahlreiche laufende Zahlungsvorgänge verlangen eine klare Zuordnung. Ich erfasse und ordne die laufenden Geschäftsvorfälle strukturiert nach den vereinbarten Vorgaben.",
   },
   {
-    Icon: Hammer,
-    name: "Handwerk",
-    zeile: "Kleines Team, voller Terminkalender, das Büro läuft nebenher.",
-  },
-  {
-    Icon: Laden,
-    name: "Handel",
-    zeile: "Viele Eingangs- und Ausgangsrechnungen, Kasse und Bank täglich.",
-  },
-  {
-    Icon: Industrie,
-    name: "Industrie",
-    zeile: "Gewachsene Prozesse, ERP im Haus, Zahlen müssen zusammenpassen.",
-  },
-  {
-    Icon: Aktentasche,
-    name: "Dienstleistung",
-    zeile: "Projektbezogen abrechnen, Reisekosten, offene Posten im Blick.",
+    Icon: Ordner,
+    name: "Projektorientierte Unternehmen",
+    zeile:
+      "Wenn Geschäftsvorfälle mehreren Projekten oder Objekten zugeordnet werden müssen, ist Nachvollziehbarkeit entscheidend. Klare Abläufe sorgen dafür, dass die Zuordnung auch im laufenden Tagesgeschäft übersichtlich bleibt.",
   },
   {
     Icon: Person,
-    name: "Freiberufler",
-    zeile: "Ein Kopf für alles – die Buchhaltung soll einfach erledigt sein.",
+    name: "Freiberufler & Dienstleister",
+    zeile:
+      "Auch bei einem überschaubaren Belegvolumen lohnt sich eine professionelle Organisation. Digitale Abläufe und eine feste Ansprechpartnerin halten den administrativen Aufwand gering und schaffen Verlässlichkeit.",
   },
 ];
 
@@ -205,11 +184,12 @@ export default function Branchen() {
           </p>
           <Reveal className="mt-4 lg:mt-0 lg:pl-10">
             <h2 className="font-headline text-[clamp(1.85rem,3.6vw,2.9rem)] leading-[1.1] tracking-[-0.02em] text-primary">
-              Branchen, die ich kenne.
+              Branchen, in denen Erfahrung zählt
             </h2>
             <p className="mt-4 max-w-[38rem] text-[17px] leading-[1.65] text-secondary">
-              In diesen Branchen habe ich gebucht – ich muss mir die Belege
-              nicht erst erklären lassen.
+              Unterschiedliche Unternehmen haben unterschiedliche Abläufe.
+              Besonders vertraut bin ich mit Bau, Handwerk, projektorientierten
+              Unternehmen sowie mit Freiberuflern und Dienstleistern.
             </p>
           </Reveal>
         </div>
@@ -227,7 +207,7 @@ export default function Branchen() {
           Ab sm fest im Raster (alle Karten gleichzeitig sichtbar). Darunter,
           auf dem Handy, liegen dieselben Karten stattdessen nebeneinander in
           einer eigenen, automatisch weiterwechselnden Reihe (siehe unten) -
-          "untereinander" waere auf dem schmalen Bildschirm sechsmal scrollen,
+          "untereinander" waere auf dem schmalen Bildschirm mehrmals scrollen,
           bis man durch ist.
         */}
         <ul className="mt-16 hidden gap-x-6 gap-y-10 sm:grid sm:grid-cols-2 lg:mt-24 lg:grid-cols-3 lg:gap-x-8">
@@ -269,9 +249,9 @@ export default function Branchen() {
         <div className="mt-12 lg:grid lg:grid-cols-[var(--rail-x)_1fr]">
           <div aria-hidden="true" />
           <p className="max-w-[38rem] text-sm leading-[1.6] text-secondary lg:pl-10">
-            Sitz in Obernburg am Main, gearbeitet wird deutschlandweit
-            digital. Ihre Branche steht nicht dabei? Fragen Sie trotzdem –
-            meistens passt es.
+            Ihre Branche ist nicht dabei? Sprechen Sie mich gerne an. Im
+            Erstgespräch klären wir, ob mein Leistungsangebot zu Ihrem Bedarf
+            passt.
           </p>
         </div>
       </div>

@@ -33,9 +33,13 @@ export default function Footer() {
               className="h-14 w-auto"
             />
             <p className="mt-6 max-w-[22rem] text-[13px] leading-[1.6] text-white/55">
-              Laufende Buchhaltung für Baubranche, Handwerk, Handel, Industrie,
-              Dienstleistung und Freiberufler – aus Obernburg am Main,
-              deutschlandweit digital.
+              <span className="font-medium text-white/80">Elena Fieder</span>
+              <br />
+              Bilanzbuchhalterin (IHK) · Bachelor Professional in
+              Bilanzbuchhaltung · über 10 Jahre Berufserfahrung
+              <br />
+              Obernburg am Main · deutschlandweit digital · Deutsch &amp;
+              Russisch
             </p>
           </div>
 
@@ -102,11 +106,19 @@ export default function Footer() {
           <p className="text-[13px] text-white/55 lg:pr-10">
             © 2026 {FIRMA.name}
           </p>
-          <p className="mt-4 max-w-[42rem] text-[13px] leading-[1.6] text-white/55 lg:mt-0 lg:pl-10">
-            Buchhaltungsservice nach § 6 StBerG. Steuerberatung sowie die
-            Erstellung von Jahresabschlüssen und Steuererklärungen sind
-            Steuerberatern vorbehalten und nicht Teil des Leistungsangebots.
-          </p>
+          <div className="mt-4 max-w-[42rem] text-[13px] leading-[1.6] text-white/55 lg:mt-0 lg:pl-10">
+            <h2 className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50">
+              Rechtlicher Hinweis
+            </h2>
+            <p className="mt-3">
+              Meine Dienstleistungen aus dem Bereich Buchhaltung unterliegen den
+              Einschränkungen des § 6 Nr. 3 und 4 des StBerG. Im Bereich
+              Buchhaltung biete ich Ihnen nur das Buchen der lfd.
+              Geschäftsvorfälle und die Belegverarbeitung an. Es wird
+              ausdrücklich darauf hingewiesen, dass ich keine Steuer- oder
+              Rechtsberatung durchführe.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -2,29 +2,26 @@ import Rail from "./ui/Rail";
 import Reveal from "./ui/Reveal";
 
 /**
- * Die Taktangabe rechts der Nummer ist Information, keine Deko: Sie nimmt die
- * haeufigste stille Frage vorweg, naemlich wie viel Aufwand auf den Kunden zukommt.
+ * Wortlaut aus den finalen Website-Texten, Abschnitt "So beginnt unsere
+ * Zusammenarbeit". Die frueheren Taktangaben (20 Minuten / einmalig /
+ * monatlich) stehen dort nicht und sind entfallen.
  */
 const SCHRITTE = [
   {
-    titel: "Erstgespräch",
-    takt: "20 Minuten",
-    text: "Wir telefonieren. Sie erzählen, wie Ihre Buchhaltung heute läuft. Kostenlos und ohne Verpflichtung.",
+    titel: "Persönliches Erstgespräch",
+    text: "Wir sprechen über Ihr Unternehmen, Ihre bisherigen Abläufe und den konkreten Unterstützungsbedarf. Das Gespräch ist kostenfrei und unverbindlich.",
   },
   {
-    titel: "Bestandsaufnahme",
-    takt: "einmalig",
-    text: "Ich schaue mir an, womit Sie arbeiten, und sage Ihnen ehrlich, was ich übernehmen kann und was nicht.",
+    titel: "Leistungsumfang klar festlegen",
+    text: "Ich prüfe, welche Aufgaben innerhalb meines Leistungsangebots übernommen werden können. Zuständigkeiten und Umfang werden vor Beginn eindeutig vereinbart.",
   },
   {
-    titel: "Übergabe einrichten",
-    takt: "einmalig",
-    text: "Wir legen fest, wie Ihre Belege zu mir kommen. Digital, wenn es geht. So einfach wie möglich.",
+    titel: "Digitale Übergabe einrichten",
+    text: "Wir legen fest, wie Unterlagen und Informationen übergeben werden und welche Abläufe für Ihr Unternehmen sinnvoll sind. So einfach wie möglich – und so strukturiert wie nötig.",
   },
   {
-    titel: "Es läuft",
-    takt: "monatlich",
-    text: "Ab dann buche ich laufend. Sie bekommen Ihre Auswertungen und melden sich, wenn Sie etwas brauchen.",
+    titel: "Laufende Bearbeitung",
+    text: "Die vereinbarten laufenden Geschäftsvorfälle werden regelmäßig bearbeitet. Offene Informationsfragen werden zeitnah geklärt und Sie haben eine feste Ansprechpartnerin.",
   },
 ];
 
@@ -43,11 +40,10 @@ export default function Ablauf() {
           </p>
           <Reveal className="mt-4 lg:mt-0 lg:pl-10">
             <h2 className="font-headline text-[clamp(1.85rem,3.6vw,2.9rem)] leading-[1.1] tracking-[-0.02em] text-primary">
-              So fangen wir an.
+              So beginnt unsere Zusammenarbeit
             </h2>
             <p className="mt-4 max-w-[38rem] text-[17px] leading-[1.65] text-secondary">
-              Der erste Schritt kostet Sie ein Telefonat. Alles andere entscheiden
-              Sie danach.
+              Klar. Persönlich. Ohne unnötige Umwege.
             </p>
           </Reveal>
         </div>
@@ -61,7 +57,7 @@ export default function Ablauf() {
             className="absolute inset-x-0 top-1 hidden h-px bg-primary/15 lg:block"
           />
 
-          {SCHRITTE.map(({ titel, takt, text }, i) => (
+          {SCHRITTE.map(({ titel, text }, i) => (
             <li key={titel} className="relative">
               <Reveal className="flex h-full flex-col" delay={i * 0.08} y={14}>
                 <span
@@ -70,14 +66,9 @@ export default function Ablauf() {
                 />
 
                 <div className="mt-7 flex-1 rounded-lg border border-primary/10 bg-white p-6 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-brand-kante hover:shadow-[0_16px_32px_-20px_rgba(15,46,59,0.35)]">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="tnum font-headline text-[1.9rem] leading-none tracking-tight text-secondary/60">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="rounded-full bg-brand-hell px-2.5 py-1 text-[11px] font-medium tracking-[0.14em] text-primary uppercase">
-                      {takt}
-                    </span>
-                  </div>
+                  <span className="tnum block font-headline text-[1.9rem] leading-none tracking-tight text-secondary/60">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
 
                   <h3 className="mt-6 font-headline text-[1.15rem] leading-[1.25] tracking-[-0.015em] text-primary">
                     {titel}

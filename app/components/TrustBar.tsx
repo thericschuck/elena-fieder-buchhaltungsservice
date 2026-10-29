@@ -5,7 +5,7 @@ import Rail from "./ui/Rail";
  * Fuer die echten Logos braucht es Nutzungsrechte der Hersteller. Text ist
  * rechtlich sauber und wirkt disziplinierter als ein Logo-Karussell.
  */
-const SOFTWARE = ["DATEV", "Lexware", "Storetax", "Monitor ERP", "Agenda"];
+const SOFTWARE = ["DATEV", "Lexware", "Agenda", "Stotax", "Monitor ERP"];
 
 /**
  * Diese Leiste ist nur der Uebergang vom Aufmacher zur Problem-Section und
@@ -25,7 +25,7 @@ export default function TrustBar() {
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div className="lg:grid lg:grid-cols-[var(--rail-x)_1fr] lg:items-baseline">
           <p className="text-[11px] font-medium tracking-[0.2em] text-secondary uppercase lg:pr-10 lg:text-right">
-            Software im Einsatz
+            Digitale Arbeitsweise
           </p>
 
           <div className="mt-5 lg:mt-0 lg:pl-10">
@@ -40,7 +40,8 @@ export default function TrustBar() {
               ))}
             </ul>
             <p className="mt-4 text-sm text-secondary">
-              Arbeiten Sie mit etwas anderem? Ich arbeite mich ein.
+              Wenn Sie ein anderes System nutzen, prüfen wir gemeinsam, ob und wie
+              sich eine Zusammenarbeit sinnvoll umsetzen lässt.
             </p>
           </div>
         </div>

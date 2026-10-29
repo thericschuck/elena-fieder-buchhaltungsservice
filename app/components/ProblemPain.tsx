@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Rail from "./ui/Rail";
 import Reveal from "./ui/Reveal";
 import BeforeAfterWipe from "./ui/BeforeAfterWipe";
-import { Clock, Euro, Receipt, WarningCircle } from "./ui/Icons";
+import { Clock, Receipt, Users, WarningCircle } from "./ui/Icons";
 import belegeVorher from "../assets/images/belege-vorher.jpg";
 import belegeNachher from "../assets/images/belege-nachher.jpg";
 
@@ -50,22 +50,32 @@ const SCATTER = [
   { x: 215, y: -30, r: -6 },
 ];
 
+/*
+  Texte aus den finalen Website-Texten, Abschnitt "Mehr Struktur. Mehr
+  Ueberblick. Mehr Freiraum." - Ueberschrift, Einleitung, vier Punkte,
+  Schlusssatz. Der Aufbau der Section (Belegstapel, Liste, Vorher/Nachher)
+  ist unveraendert; nur der Wortlaut ist ersetzt. Nicht umformulieren.
+*/
 const PAINS = [
   {
-    Icon: Receipt,
-    text: "Der Belegstapel wächst schneller, als Sie ihn abarbeiten.",
-  },
-  {
     Icon: Clock,
-    text: "Buchhaltung passiert abends um zehn. Nach zwölf Stunden auf der Baustelle.",
+    titel: "Mehr Zeit für Ihr Kerngeschäft",
+    text: "Laufende Geschäftsvorfälle werden regelmäßig bearbeitet, statt sich im Tagesgeschäft anzusammeln.",
   },
   {
-    Icon: Euro,
-    text: "Ihr Steuerberater rechnet Routinearbeit zum Beraterhonorar ab.",
+    Icon: Receipt,
+    titel: "Klare Abläufe",
+    text: "Von der digitalen Belegübergabe bis zur laufenden Erfassung schaffen wir einen Prozess, der zu Ihrem Unternehmen passt.",
   },
   {
     Icon: WarningCircle,
-    text: "Ob wirklich alles sauber gebucht ist, erfahren Sie erst beim Jahresabschluss.",
+    titel: "Offene Punkte zeitnah klären",
+    text: "Unklare Vorgänge werden nicht einfach weitergeschoben. Fehlende Informationen werden frühzeitig angefragt und nachvollziehbar dokumentiert.",
+  },
+  {
+    Icon: Users,
+    titel: "Persönliche Betreuung",
+    text: "Sie haben eine feste Ansprechpartnerin. Ich kenne Ihre Abläufe und Sie sprechen direkt mit mir.",
   },
 ];
 
@@ -198,24 +208,33 @@ export default function ProblemPain() {
 
             {/* Haben: was das kostet */}
             <div className="relative z-10 mt-12 lg:mt-0 lg:pl-10">
-              <p className="text-[11px] font-medium tracking-[0.2em] text-secondary uppercase">
-                Das Problem
-              </p>
-              <h2 className="mt-4 font-headline text-[clamp(1.85rem,3.6vw,2.9rem)] leading-[1.1] tracking-[-0.02em] text-primary">
-                Woran es meistens hakt.
+              <h2 className="font-headline text-[clamp(1.85rem,3.6vw,2.9rem)] leading-[1.1] tracking-[-0.02em] text-primary">
+                Mehr Struktur. Mehr Überblick. Mehr Freiraum.
               </h2>
+              <p className="mt-5 max-w-[38rem] text-[17px] leading-[1.6] text-secondary">
+                Gut organisierte kaufmännische Abläufe sollen Ihnen Arbeit
+                abnehmen – nicht zusätzliche schaffen. Ich übernehme die
+                vereinbarten Aufgaben im Rahmen meines Leistungsangebots
+                zuverlässig und strukturiert, damit Sie sich auf Ihr
+                Unternehmen und Ihre Kunden konzentrieren können.
+              </p>
 
-              <ul className="mt-9 flex max-w-[36rem] flex-col gap-6">
-                {PAINS.map(({ Icon, text }) => (
-                  <li key={text} data-pain className="flex gap-4">
+              <ul className="mt-8 flex max-w-[36rem] flex-col gap-5">
+                {PAINS.map(({ Icon, titel, text }) => (
+                  <li key={titel} data-pain className="flex gap-4">
                     {/* Kachel deckt voll: bg-brand-hell statt einer Prozent-Deckkraft.
                         Vorher schien der Hintergrund durch. */}
                     <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-primary/10 bg-brand-hell text-primary">
                       <Icon className="h-[18px] w-[18px]" />
                     </span>
-                    <p className="text-[17px] leading-[1.55] text-text">
-                      {text}
-                    </p>
+                    <div>
+                      <h3 className="text-[17px] leading-[1.4] font-medium text-primary">
+                        {titel}
+                      </h3>
+                      <p className="mt-1 text-[15px] leading-[1.5] text-text">
+                        {text}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -233,24 +252,15 @@ export default function ProblemPain() {
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 lg:px-10 lg:pb-24">
         <div className="lg:grid lg:grid-cols-[var(--rail-x)_1fr] lg:items-start">
           <div className="lg:pr-10 lg:text-right">
-            <p className="text-[11px] font-medium tracking-[0.2em] text-secondary uppercase">
-              Die Lösung
-            </p>
-
-            <div className="mt-8">
+            <div>
               <BeforeAfterWipe vorher={VORHER} nachher={NACHHER} />
             </div>
           </div>
 
           <Reveal className="mt-10 lg:mt-0 lg:pl-10">
             <p className="max-w-[42rem] font-headline text-[clamp(1.35rem,2.4vw,1.9rem)] leading-[1.25] tracking-[-0.015em] text-primary">
-              Genau da setze ich an.
-            </p>
-            <p className="mt-5 max-w-[42rem] text-[17px] leading-[1.65] text-secondary">
-              Ich übernehme die laufende Buchhaltung vollständig: Belege kommen
-              digital zu mir, werden zeitnah gebucht und sind jederzeit
-              nachvollziehbar. Ihr Steuerberater bekommt eine Basis, auf der er
-              ohne Rückfragen aufbauen kann.
+              Mein Anspruch: eine Zusammenarbeit, auf die Sie sich verlassen
+              können.
             </p>
           </Reveal>
         </div>

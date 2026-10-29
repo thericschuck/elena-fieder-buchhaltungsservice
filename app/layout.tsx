@@ -23,7 +23,7 @@ const dmSans = DM_Sans({
   Social-Previews anzeigen - die Formulierungen sind deshalb keine
   Entwicklerdetails, sondern Text zum Freigeben.
 
-  Laengen: Title 52 Zeichen, Description 158 Zeichen. Google schneidet Titles
+  Laengen: Title 52 Zeichen, Description 142 Zeichen. Google schneidet Titles
   ab etwa 580px (rund 60 Zeichen) und Descriptions ab rund 160 Zeichen ab -
   beides liegt bewusst knapp darunter.
 
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: `%s | ${FIRMA.name}`,
   },
   description:
-    "Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit digital. Kostenloses Erstgespräch.",
+    "Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK) in Obernburg am Main, deutschlandweit digital.",
 
   applicationName: FIRMA.name,
   authors: [{ name: FIRMA.inhaberin, url: FIRMA.url }],
@@ -57,11 +57,9 @@ export const metadata: Metadata = {
     "Buchhaltungsservice Obernburg",
     "Buchhaltung Obernburg am Main",
     "Bilanzbuchhalterin IHK",
-    "laufende Finanzbuchhaltung",
-    "Buchhaltung Baubranche",
-    "Buchhaltung Handwerk",
-    "offene Posten Zahlungsüberwachung",
-    "BWA",
+    "Buchen laufender Geschäftsvorfälle",
+    "Buchhaltung Bau Handwerk",
+    "Buchhaltung Freiberufler",
     "Buchhaltung Landkreis Miltenberg",
     "Buchhaltungsbüro Bayerischer Untermain",
   ],
@@ -87,14 +85,14 @@ export const metadata: Metadata = {
     siteName: FIRMA.name,
     title: "Buchhaltungsservice Obernburg am Main | Elena Fieder",
     description:
-      "Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK), über 10 Jahre Erfahrung, deutschlandweit digital.",
+      "Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK), über 10 Jahre Berufserfahrung, deutschlandweit digital.",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Buchhaltungsservice Obernburg am Main | Elena Fieder",
     description:
-      "Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie. Bilanzbuchhalterin (IHK), deutschlandweit digital.",
+      "Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler. Bilanzbuchhalterin (IHK), deutschlandweit digital.",
   },
 
   /* Telefonnummern duerfen erkannt werden, Adressen nicht - iOS verlinkt

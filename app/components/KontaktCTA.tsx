@@ -41,12 +41,6 @@ const HINWEISE = [
   "Wer die Buchhaltung bisher macht",
 ];
 
-const ZUSAGEN = [
-  "Antwort in der Regel am selben Werktag",
-  "Im Erstgespräch wird nichts unterschrieben",
-  "Ich sage Ihnen, wenn Sie einen Steuerberater brauchen",
-];
-
 const FELD_KLASSE =
   "w-full rounded-md border bg-white/[0.06] px-4 py-3.5 text-[16px] text-bg outline-none transition-colors focus-visible:border-gold-licht focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-licht";
 
@@ -140,28 +134,16 @@ export default function KontaktCTA() {
                 konkreter kann ich Ihnen im Erstgespräch antworten.
               </p>
             </aside>
-
-            {/* Statt Trust-Badges: drei Zusagen, die man auch halten kann. */}
-            <ul className="mt-8 flex flex-col gap-2.5">
-              {ZUSAGEN.map((z) => (
-                <li
-                  key={z}
-                  className="flex items-start gap-3 text-sm leading-[1.5] text-white/70"
-                >
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  {z}
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div className="mt-4 lg:mt-0 lg:pl-10">
             <h2 className="font-headline text-[clamp(1.85rem,3.6vw,2.9rem)] leading-[1.1] tracking-[-0.02em] text-bg">
-              Reden wir 20 Minuten.
+              Passt eine Zusammenarbeit zu Ihnen?
             </h2>
             <p className="mt-5 max-w-[36rem] text-[17px] leading-[1.65] text-white/70">
-              Kostenlos und unverbindlich. Danach wissen Sie, ob wir
-              zusammenpassen – und ich, was Sie brauchen.
+              Sie legen Wert auf Qualität, Verlässlichkeit und eine persönliche
+              Ansprechpartnerin, die Ihre Abläufe kennt? Dann freue ich mich
+              darauf, Ihr Unternehmen kennenzulernen.
             </p>
 
             {/* Ganz normales Formular: Beschriftung ueber dem Feld, ein Feld
@@ -178,7 +160,7 @@ export default function KontaktCTA() {
                       Anfrage notiert am {sent}
                     </p>
                     <p className="mt-3 text-[15px] leading-[1.6] text-white/70">
-                      Ich melde mich in der Regel am selben Werktag bei Ihnen.
+                      Ich melde mich bei Ihnen.
                     </p>
                   </div>
                 ) : (
@@ -283,9 +265,13 @@ export default function KontaktCTA() {
                       type="submit"
                       className="gold-flaeche group mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-md px-7 py-4 text-base font-medium text-text hover:-translate-y-0.5"
                     >
-                      Erstgespräch anfragen
+                      Persönliches Erstgespräch anfragen
                       <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
                     </button>
+
+                    <p className="mt-3 text-center text-[13px] text-white/70">
+                      Ca. 20 Minuten · kostenfrei · unverbindlich
+                    </p>
 
                     <p className="mt-4 text-[13px] text-white/55">
                       Felder mit <span className="text-gold">*</span> brauche

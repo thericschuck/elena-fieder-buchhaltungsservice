@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: FIRMA.name,
     short_name: "Elena Fieder",
     description:
-      "Laufende Buchhaltung für Bau, Handwerk, Handel und Industrie – Bilanzbuchhalterin (IHK) in Obernburg am Main.",
+      "Buchen laufender Geschäftsvorfälle für Bau, Handwerk und Freiberufler – Bilanzbuchhalterin (IHK) in Obernburg am Main.",
     lang: "de",
     start_url: "/",
     display: "browser",
