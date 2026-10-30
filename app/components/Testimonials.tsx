@@ -18,11 +18,9 @@ import { ArrowRight } from "./ui/Icons";
   ohne die Angabe zum Autohandel, Fotostudio auf einen Absatz gekuerzt) - die
   Vorlage ist massgeblich.
 
-  DSGVO: Vor dem Live-Gang von jedem Namensgeber eine formlose schriftliche
-  Freigabe einholen (E-Mail reicht) und ablegen. Viktor und Inna sind nur mit
-  Vornamen bzw. abgekuerztem Nachnamen genannt; "Fotostudio Belichtungswert"
-  und Ruslan Chukhliebov sind mit vollem Namen genannt und brauchen die
-  Freigabe des jeweiligen Inhabers.
+  DSGVO: Die Freigaben aller vier Namensgeber sind bestaetigt (Stand
+  30.10.2026). Bei neuen Stimmen vorher wieder eine formlose schriftliche
+  Freigabe einholen (E-Mail reicht) und ablegen.
 
   Die Initialen stehen als Feld in den Daten und werden nicht aus dem Namen
   berechnet: aus "Fotostudio Belichtungswert" wuerde sonst nur "F".

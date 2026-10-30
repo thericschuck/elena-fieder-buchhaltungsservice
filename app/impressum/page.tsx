@@ -9,12 +9,12 @@ import { ANSCHRIFT_EINZEILIG, FIRMA } from "../lib/firma";
   eine Nennung des TMG waere heute selbst abmahnfaehig), erweitert um die
   Informationspflichten fuer Dienstleister aus § 2 DL-InfoV.
 
-  NOCH ZU KLAEREN, beides bewusst nicht geraten:
-  1. Umsatzsteuer - USt-IdNr. oder Kleinunternehmerregelung nach § 19 UStG.
-     Eine falsche Angabe an dieser Stelle ist abmahnfaehig.
-  2. Berufshaftpflichtversicherung - die Angabe nach § 2 Abs. 1 Nr. 11
-     DL-InfoV ist nur Pflicht, wenn eine solche Versicherung besteht. Besteht
-     keine, kann der Abschnitt vollstaendig entfallen.
+  BEWUSST NOCH NICHT ENTHALTEN (Stand 30.10.2026) - ab 01.01.2027 nachtragen,
+  sobald die Unterlagen vorliegen:
+  1. Umsatzsteuer - USt-IdNr. (§ 27a UStG) oder Hinweis nach § 19 UStG. Eine
+     falsche Angabe ist abmahnfaehig, deshalb nichts raten.
+  2. Berufshaftpflichtversicherung nach § 2 Abs. 1 Nr. 11 DL-InfoV (Versicherer,
+     Anschrift, raeumlicher Geltungsbereich) - nur Pflicht, wenn eine besteht.
 */
 
 export const metadata: Metadata = {
@@ -50,14 +50,6 @@ export default function ImpressumSeite() {
         </p>
       </div>
 
-      <h2>Umsatzsteuer</h2>
-      <p>
-        [OFFEN – bitte eine der beiden Varianten wählen und die andere löschen:
-        „Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:
-        DE…“ oder „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet
-        (Kleinunternehmerregelung).“]
-      </p>
-
       <h2>Berufsbezeichnung und berufsrechtliche Angaben</h2>
       <p>
         Berufsbezeichnung: Bilanzbuchhalterin (IHK) – Bachelor Professional
@@ -79,25 +71,6 @@ export default function ImpressumSeite() {
         Leistungen, die Steuerberaterinnen und Steuerberatern vorbehalten sind –
         insbesondere steuerliche Beratung, die Erstellung von Jahresabschlüssen
         und Bilanzen sowie die Anfertigung von Steuererklärungen.
-      </p>
-
-      <h2>Berufshaftpflichtversicherung</h2>
-      <p>
-        Angabe gemäß § 2 Abs. 1 Nr. 11 Dienstleistungs-Informationspflichten-
-        Verordnung (DL-InfoV):
-      </p>
-      <div className="block">
-        <p>
-          Versicherer: [OFFEN – Name des Versicherers]
-          <br />
-          Anschrift: [OFFEN – Anschrift des Versicherers]
-          <br />
-          Räumlicher Geltungsbereich: [OFFEN – z. B. Deutschland]
-        </p>
-      </div>
-      <p>
-        Besteht keine Berufshaftpflichtversicherung, kann dieser Abschnitt
-        entfallen – die Angabe ist nur bei bestehender Versicherung Pflicht.
       </p>
 
       <h2>Verantwortlich für den Inhalt</h2>

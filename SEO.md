@@ -159,10 +159,10 @@ Diese Angaben stehen im Code als `[OFFEN – …]` und sind damit auf der Seite
 sichtbar. Ich habe sie nicht geraten, weil eine falsche Angabe an diesen
 Stellen abmahnfähig bzw. ein Datenschutzverstoß wäre.
 
-- [ ] **Umsatzsteuer** (Impressum): USt-IdNr. **oder** Kleinunternehmerregelung
+- [ ] **(erst ab 01.01.2027, Abschnitt bewusst entfernt)** **Umsatzsteuer** (Impressum): USt-IdNr. **oder** Kleinunternehmerregelung
       nach § 19 UStG? Eine der beiden Varianten wählen, die andere löschen.
       → `app/impressum/page.tsx`, Abschnitt „Umsatzsteuer"
-- [ ] **Berufshaftpflichtversicherung** (Impressum): Besteht eine? Wenn ja,
+- [ ] **(erst ab 01.01.2027, Abschnitt bewusst entfernt)** **Berufshaftpflichtversicherung** (Impressum): Besteht eine? Wenn ja,
       Versicherer, Anschrift und räumlicher Geltungsbereich eintragen. Wenn
       nein, **den ganzen Abschnitt löschen** – die Angabe nach § 2 Abs. 1
       Nr. 11 DL-InfoV ist nur bei bestehender Versicherung Pflicht.

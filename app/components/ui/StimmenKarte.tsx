@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, type CSSProperties, type SVGProps } from "react";
+import {
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type SVGProps,
+} from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown, KreuzMarke } from "./Icons";
 
@@ -27,6 +33,9 @@ import { ChevronDown, KreuzMarke } from "./Icons";
      finden. Es waere also immer nur der AvatarFallback zu sehen. Den rendern
      wir direkt als Initialenkreis, wie schon beim EF-Badge.
 */
+
+/** Hoechste Einklapp-Hoehe in px (rund fuenf Zeilen). */
+const MAX_ZU_HOEHE = 132;
 
 export type Stimme = {
   absaetze: string[];
@@ -78,6 +87,41 @@ export default function StimmenKarte({
   const panelId = `stimme-${index}`;
   const reduziert = useReducedMotion();
 
+  /*
+    Eingeklappt endet die Karte an der Unterkante der letzten Zeile, die noch
+    ganz hineinpasst - nicht starr bei MAX_ZU_HOEHE. Mit fester Hoehe wurde
+    zwischen Absaetzen (Abstand 14px) regelmaessig eine Zeile zur Haelfte
+    abgeschnitten. Gemessen wird pro Textzeile (Range.getClientRects) und neu
+    bei jeder Aenderung der Absatzgroesse (Breite, Schriftart geladen).
+  */
+  const textRef = useRef<HTMLDivElement>(null);
+  const [zuHoehe, setZuHoehe] = useState(MAX_ZU_HOEHE);
+
+  useLayoutEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+
+    const messen = () => {
+      const oben = el.getBoundingClientRect().top;
+      const bereich = document.createRange();
+      let beste = 0;
+      el.querySelectorAll("p").forEach((p) => {
+        bereich.selectNodeContents(p);
+        for (const zeile of bereich.getClientRects()) {
+          const unten = zeile.bottom - oben;
+          if (unten <= MAX_ZU_HOEHE && unten > beste) beste = unten;
+        }
+      });
+      // 2px Luft fuer Unterlaengen; die naechste Zeile beginnt erst weiter unten.
+      if (beste > 0) setZuHoehe(Math.ceil(beste) + 2);
+    };
+
+    messen();
+    const beobachter = new ResizeObserver(messen);
+    el.querySelectorAll("p").forEach((p) => beobachter.observe(p));
+    return () => beobachter.disconnect();
+  }, [absaetze]);
+
   return (
     <figure
       style={{ "--karte-index": index } as CSSProperties}
@@ -113,8 +157,9 @@ export default function StimmenKarte({
             ohnehin nur hart gesprungen statt zu animieren.
           */}
           <motion.div
+            ref={textRef}
             initial={false}
-            animate={{ height: offen ? "auto" : 132 }}
+            animate={{ height: offen ? "auto" : zuHoehe }}
             transition={{
               duration: reduziert ? 0 : 0.35,
               ease: [0.22, 1, 0.36, 1],

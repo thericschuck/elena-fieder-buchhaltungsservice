@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { useSmoothScrollTo } from "./SmoothScrollProvider";
-import Rail from "./ui/Rail";
 import { ArrowRight } from "./ui/Icons";
 import buero from "../assets/images/arbeitsplatz.webp";
 
@@ -44,15 +43,13 @@ export default function Hero() {
       ref={rootRef}
       className="relative pt-28 pb-12 lg:pt-32 lg:pb-14"
     >
-      <Rail tone="light" />
-
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         {/*
           Der Hero hat sein eigenes Spaltenverhaeltnis (60/40) statt des
           Soll/Haben-Rasters der uebrigen Sections: die Aussage braucht die
           breitere Spalte, das Bild die Kante zum Bildschirmrand. Die
-          Kontolinie laeuft weiter bei 34% durch und kreuzt dabei die
-          Headline - dieselbe bewusste Setzung wie vorher.
+          Kontolinie beginnt bewusst erst unterhalb des Heros (TrustBar), damit
+          der Aufmacher ruhig bleibt.
 
           Warum das Foto eine eigene Flaeche bekommt und nicht hinter der
           Schrift liegt: nachgerechnet braeuchte das Logo-Cyan als
