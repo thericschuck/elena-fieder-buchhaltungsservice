@@ -140,14 +140,14 @@ export default function BeforeAfterWipe({
       {/* Die Kontolinie als Schnittkante */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-[var(--wipe)] w-0.5 -translate-x-1/2 bg-gold shadow-[0_0_0_1px_rgba(15,46,59,0.3)]"
+        className="pointer-events-none absolute inset-y-0 left-[var(--wipe)] w-0.5 -translate-x-1/2 bg-gold shadow-[0_0_0_1px_rgba(15,45,64,0.3)]"
       />
 
       {/* Griff. 44px, damit er auch als Touchziel taugt. Nur unter lg - ab lg
           gibt es keinen Regler zum Greifen, siehe Kopfkommentar. */}
       <span
         aria-hidden="true"
-        className="gold-flaeche pointer-events-none absolute top-1/2 left-[var(--wipe)] flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-text shadow-[0_6px_18px_-6px_rgba(15,46,59,0.6)] ring-1 ring-primary/20 peer-focus-visible:ring-2 peer-focus-visible:ring-primary peer-focus-visible:ring-offset-2 lg:hidden"
+        className="gold-flaeche pointer-events-none absolute top-1/2 left-[var(--wipe)] flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-text shadow-[0_6px_18px_-6px_rgba(15,45,64,0.6)] ring-1 ring-primary/20 peer-focus-visible:ring-2 peer-focus-visible:ring-primary peer-focus-visible:ring-offset-2 lg:hidden"
       >
         <PfeileHorizontal className="h-5 w-5" />
       </span>

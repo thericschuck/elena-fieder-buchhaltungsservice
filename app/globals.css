@@ -9,28 +9,28 @@
   /* ---------------------------------------------------------------------
      Corporate-Palette, abgeleitet aus dem Logo.
 
-     Das Logo ist Cyan #0CC1E0 (H 189). Primary, Secondary, Text und der
-     Hintergrund liegen jetzt in derselben Hue-Familie (H 196-200), damit
+     Das Logo ist Himmelblau #63B5F5 (H 207). Primary, Secondary, Text und der
+     Hintergrund liegen jetzt in derselben Hue-Familie (H 203-208), damit
      Seite und Wortmarke als eine Identitaet lesen. Vorher war Primary ein
      neutrales Navy und der Grund ein warmes Creme - beides hat neben dem
-     Logo-Cyan fremd gewirkt.
+     Logo fremd gewirkt.
 
      Gold bleibt als warmer Gegenpol fuer CTA und Akzente (Briefing 4.2).
      --------------------------------------------------------------------- */
-  --color-primary: #0f2e3b;
-  --color-secondary: #35586a;
-  --color-text: #10222b;
-  --color-bg: #f2f7f9;
+  --color-primary: #0f2d40;
+  --color-secondary: #355a73;
+  --color-text: #10202d;
+  --color-bg: #f2f7fb;
 
   /* Markenblau in drei Stufen. Wichtig: --color-brand ist der exakte
      Logowert und erreicht auf --color-bg nur 2,0:1. Er gehoert deshalb
      ausschliesslich auf dunkle Flaechen und in Musterlinien mit niedriger
      Deckkraft - nie als Text oder Icon auf Hell. Dafuer ist brand-tief da,
      das mit 4,5:1 selbst als Fliesstext traegt. */
-  --color-brand: #0cc1e0;
-  --color-brand-tief: #0a7c93;
-  --color-brand-hell: #dceef3;
-  --color-brand-kante: #b9dde8;
+  --color-brand: #63b5f5;
+  --color-brand-tief: #1f6fa8;
+  --color-brand-hell: #dfeefa;
+  --color-brand-kante: #bcdaf2;
 
   /* Gold in drei Stufen statt einem Ton.
      Ein einzelner flacher Wert wirkt nie metallisch - Gold entsteht erst aus

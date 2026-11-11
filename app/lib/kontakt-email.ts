@@ -15,14 +15,14 @@ import { FIRMA } from "./firma";
  */
 
 const C = {
-  primary: "#0F2E3B",
-  brand: "#0CC1E0",
-  brandTief: "#0A7C93",
-  brandHell: "#DCEEF3",
-  kante: "#B9DDE8",
-  bg: "#F2F7F9",
-  text: "#10222B",
-  sekundaer: "#35586A",
+  primary: "#0f2d40",
+  brand: "#63b5f5",
+  brandTief: "#1f6fa8",
+  brandHell: "#dfeefa",
+  kante: "#bcdaf2",
+  bg: "#f2f7fb",
+  text: "#10202d",
+  sekundaer: "#355a73",
   gold: "#D4AF37",
   weiss: "#FFFFFF",
 };

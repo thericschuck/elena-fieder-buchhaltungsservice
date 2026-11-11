@@ -59,7 +59,7 @@ function BranchenKarte({
       </span>
 
       {/* Karte */}
-      <div className="flex h-[calc(100%-2rem)] flex-col rounded-b-md rounded-tr-md border-t-2 border-gold-tief/40 bg-white p-6 shadow-[0_18px_44px_-30px_rgba(15,46,59,0.45)]">
+      <div className="flex h-[calc(100%-2rem)] flex-col rounded-b-md rounded-tr-md border-t-2 border-gold-tief/40 bg-white p-6 shadow-[0_18px_44px_-30px_rgba(15,45,64,0.45)]">
         <h3 className="font-headline text-[1.15rem] leading-[1.25] tracking-[-0.015em] text-primary">
           {name}
         </h3>

@@ -33,7 +33,7 @@ gerechnete Quelle beim Ausliefern wieder auf q75 herunterdrücken.
 
 ## Warum das Hero-Foto neben der Schrift steht und nicht darunter
 
-Nachgerechnet: damit `--color-brand` (#0CC1E0) als Displayschrift **auf** einem
+Nachgerechnet: damit `--color-brand` (#63b5f5) als Displayschrift **auf** einem
 Foto 4,5:1 erreicht, darf der hellste Bildpunkt der fertigen Fläche eine
 Luminanz von 0,058 nicht überschreiten – ein Bürofoto ist dann praktisch
 schwarz. Umgekehrt bräuchte dunkle Schrift auf hellem Scrim einen dunkelsten

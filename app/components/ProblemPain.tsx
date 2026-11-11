@@ -81,7 +81,7 @@ const PAINS = [
 
 function BelegCard({ beleg }: { beleg: (typeof BELEGE)[number] }) {
   return (
-    <div className="rounded-md border border-primary/15 bg-white px-4 py-3 shadow-[0_14px_30px_-18px_rgba(15,46,59,0.55)]">
+    <div className="rounded-md border border-primary/15 bg-white px-4 py-3 shadow-[0_14px_30px_-18px_rgba(15,45,64,0.55)]">
       <div className="flex items-center justify-between gap-4">
         <div className="flex min-w-0 items-center gap-2.5">
           <Receipt className="h-4 w-4 shrink-0 text-gold-tief" />
