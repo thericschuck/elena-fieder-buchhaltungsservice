@@ -26,7 +26,7 @@ export const FIRMA = {
   url: "https://elena-fieder.de",
 
   /** Stand der Rechtstexte. Bei jeder inhaltlichen Aenderung mitziehen. */
-  standRechtstexte: "September 2026",
+  standRechtstexte: "November 2026",
 } as const;
 
 /** Einzeilige Anschrift, z. B. fuer "Verantwortlich fuer den Inhalt". */

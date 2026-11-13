@@ -9,12 +9,13 @@ import { ANSCHRIFT_EINZEILIG, FIRMA } from "../lib/firma";
   eine Nennung des TMG waere heute selbst abmahnfaehig), erweitert um die
   Informationspflichten fuer Dienstleister aus § 2 DL-InfoV.
 
-  BEWUSST NOCH NICHT ENTHALTEN (Stand 30.10.2026) - ab 01.01.2027 nachtragen,
-  sobald die Unterlagen vorliegen:
+  BEWUSST NOCH NICHT ENTHALTEN - ab 01.01.2027 nachtragen, sobald die
+  Unterlagen vorliegen:
   1. Umsatzsteuer - USt-IdNr. (§ 27a UStG) oder Hinweis nach § 19 UStG. Eine
      falsche Angabe ist abmahnfaehig, deshalb nichts raten.
-  2. Berufshaftpflichtversicherung nach § 2 Abs. 1 Nr. 11 DL-InfoV (Versicherer,
-     Anschrift, raeumlicher Geltungsbereich) - nur Pflicht, wenn eine besteht.
+  (Berufshaftpflicht nach § 2 Abs. 1 Nr. 11 DL-InfoV ist seit 13.11.2026
+  enthalten: Markel Insurance SE, Geltungsbereich weltweit laut Bedingungen
+  "Pro Dienstleister" Abschnitt D. Police gueltig ab 17.09.2026.)
 */
 
 export const metadata: Metadata = {
@@ -71,6 +72,19 @@ export default function ImpressumSeite() {
         Leistungen, die Steuerberaterinnen und Steuerberatern vorbehalten sind –
         insbesondere steuerliche Beratung, die Erstellung von Jahresabschlüssen
         und Bilanzen sowie die Anfertigung von Steuererklärungen.
+      </p>
+
+      <h2>Berufshaftpflichtversicherung</h2>
+      <p>
+        Vermögensschaden-Haftpflichtversicherung bei:
+        <br />
+        Markel Insurance SE
+        <br />
+        Sophienstraße 26
+        <br />
+        80333 München
+        <br />
+        Räumlicher Geltungsbereich: weltweit
       </p>
 
       <h2>Verantwortlich für den Inhalt</h2>
