@@ -5,7 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useSmoothScrollTo } from "./SmoothScrollProvider";
 import { ArrowRight } from "./ui/Icons";
-import buero from "../assets/images/arbeitsplatz.webp";
+import portrait from "../assets/images/elena-fieder-hero.webp";
 
 export default function Hero() {
   const scrollTo = useSmoothScrollTo();
@@ -41,9 +41,9 @@ export default function Hero() {
     <section
       id="hero"
       ref={rootRef}
-      className="relative pt-28 pb-12 lg:pt-32 lg:pb-14"
+      className="relative flex min-h-svh flex-col justify-end overflow-hidden bg-primary pt-22 pb-10 lg:block lg:min-h-0 lg:overflow-visible lg:bg-transparent lg:pt-32 lg:pb-14"
     >
-      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
         {/*
           Der Hero hat sein eigenes Spaltenverhaeltnis (60/40) statt des
           Soll/Haben-Rasters der uebrigen Sections: die Aussage braucht die
@@ -59,40 +59,40 @@ export default function Hero() {
           daneben ist die einzige Fassung, in der beides bestehen bleibt.
         */}
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,40%)] lg:items-stretch lg:gap-10">
-          <div>
+          <div className="relative z-10 pt-[38svh] lg:z-auto lg:pt-0">
             <div data-hero-zeile>
               <span
                 aria-hidden="true"
                 className="gold-linie block h-px w-20"
               />
-              <p className="mt-3 text-[11px] font-medium tracking-[0.2em] text-secondary uppercase">
+              <p className="mt-3 text-[11px] font-medium tracking-[0.2em] text-white/80 uppercase lg:text-secondary">
                 Elena Fieder | Bilanzbuchhalterin (IHK)
               </p>
-              <p className="mt-1.5 text-[13px] leading-[1.5] text-secondary">
+              <p className="mt-1.5 text-[13px] leading-[1.5] text-white/75 lg:text-secondary">
                 Buchen laufender Geschäftsvorfälle · persönlich &amp; digital
               </p>
             </div>
 
             <h1
               data-hero-zeile
-              className="mt-5 font-headline text-[clamp(2rem,4.2vw,3.4rem)] leading-[1.05] tracking-[-0.03em] text-primary lg:mt-6"
+              className="mt-5 font-headline text-[clamp(2rem,4.2vw,3.4rem)] leading-[1.05] tracking-[-0.03em] text-white lg:mt-6 lg:text-primary"
             >
               Mehr Klarheit in Ihren Zahlen.
-              <span className="mt-1.5 block text-brand-tief">
+              <span className="mt-1.5 block text-brand lg:text-brand-tief">
                 Mehr Zeit für Ihr Unternehmen.
               </span>
             </h1>
 
             <div
               data-hero-zeile
-              className="mt-5 max-w-[38rem] space-y-3 text-[16px] leading-[1.55] text-secondary lg:mt-6"
+              className="mt-5 max-w-[38rem] space-y-3 text-[16px] leading-[1.55] text-white/85 lg:mt-6 lg:text-secondary"
             >
               <p>
                 Professionelle Unterstützung beim Buchen laufender
                 Geschäftsvorfälle – für Unternehmen und Freiberufler, die Wert
                 auf Qualität, Verlässlichkeit und persönliche Betreuung legen.
               </p>
-              <p>
+              <p className="hidden lg:block">
                 Besondere Erfahrung in Bau, Handwerk und projektorientierten
                 Unternehmen sowie in der Betreuung von Freiberuflern und
                 Dienstleistern.
@@ -101,7 +101,7 @@ export default function Hero() {
 
             <p
               data-hero-zeile
-              className="mt-4 max-w-[38rem] text-[14px] leading-[1.55] text-primary"
+              className="mt-4 hidden max-w-[38rem] text-[14px] leading-[1.55] text-primary lg:block"
             >
               Bilanzbuchhalterin (IHK) · Bachelor Professional in
               Bilanzbuchhaltung · über 10 Jahre Berufserfahrung
@@ -127,29 +127,34 @@ export default function Hero() {
                 Persönliches Erstgespräch anfragen
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
-              <p className="text-sm leading-relaxed text-secondary">
+              <p className="text-sm leading-relaxed text-white/75 lg:text-secondary">
                 Ca. 20 Minuten · kostenfrei · unverbindlich
               </p>
             </div>
           </div>
 
-          {/* Bildpanel. bleed-rechts zieht es bis an die Viewportkante, ohne
-              dass der Container angefasst werden muss. Der Bildausschnitt ist
-              nach rechts verschoben (object-position), weil dort der
-              Arbeitsplatz sitzt und links nur Wand. */}
+          {/* Bildpanel. Mobil Hintergrund: das Foto liegt oben, ein Verlauf
+              geht in das Primaerblau ueber, der Text steht als Overlay auf
+              dem ruhigen Blau darunter (heller Text, Kontrast gesichert).
+              Ab lg bleibt es das Panel rechts, das per Bleed bis an die
+              Viewportkante reicht. */}
           <div
             data-panel
-            className="bleed-rechts relative mt-8 h-56 sm:h-72 lg:mt-0 lg:h-auto lg:min-h-[24rem]"
+            className="absolute inset-x-0 top-22 h-[58svh] lg:relative lg:inset-x-auto lg:top-auto lg:mt-0 lg:h-auto lg:min-h-[24rem] bleed-rechts-lg"
           >
             <Image
-              src={buero}
-              alt="Ein aufgeräumter, heller Arbeitsplatz mit Laptop, Notizbuch und Pflanzen."
+              src={portrait}
+              alt="Elena Fieder, Bilanzbuchhalterin (IHK), am Laptop"
               placeholder="blur"
               preload
               fill
               sizes="(min-width: 1024px) 44vw, 100vw"
               quality={85}
-              className="rounded-l-lg object-cover object-[62%_50%] lg:rounded-l-xl"
+              className="object-cover object-[56%_0%] lg:rounded-l-xl lg:object-[50%_30%]"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-primary via-primary/55 via-35% to-transparent to-70% lg:hidden"
             />
           </div>
         </div>

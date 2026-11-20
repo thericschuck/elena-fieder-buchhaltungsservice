@@ -204,6 +204,21 @@ html.lenis body {
   margin-right: calc(50% - 50vw + var(--scrollbar-breite));
 }
 
+/* Hero-Bildpanel ab lg: reicht exakt bis an die Viewportkante. Prozentwerte
+   in margin beziehen sich auf die schmale Grid-Spalte, nicht auf den Viewport -
+   .bleed-rechts schiesst im Grid deshalb weit ueber die Kante hinaus (das Bild
+   wird dann breiter als sichtbar und rechts abgeschnitten). Hier rein
+   absolut: Abstand Container-Innenkante bis Viewportkante (max-w-7xl = 80rem,
+   Innenabstand lg:px-10 = 2.5rem). */
+@media (min-width: 64rem) {
+  .bleed-rechts-lg {
+    --sichtbreite: calc(100vw - var(--scrollbar-breite));
+    margin-right: calc(
+      (min(var(--sichtbreite), 80rem) - var(--sichtbreite)) / 2 - 2.5rem
+    );
+  }
+}
+
 /* Buchseite: feine Linien wie in einem Kontenbuch. Die Zeilenhoehe laesst sich
    ueber --zeile setzen, damit derselbe Effekt in schmalen Spalten enger sitzt. */
 .buch-linien {
