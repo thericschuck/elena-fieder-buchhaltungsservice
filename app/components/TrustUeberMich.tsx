@@ -69,11 +69,11 @@ export default function TrustUeberMich() {
               Über mich
             </p>
 
-            {/* Porträt, 4:5, aus dem Original MIN_0176 (2:3) mit Gesicht im oberen
+            {/* Porträt, 4:5, aus dem Original MIN_0284 (2:3) mit Gesicht im oberen
                 Drittel zugeschnitten. */}
             <Image
               src={portrait}
-              alt="Elena Fieder, Bilanzbuchhalterin (IHK), im Porträt"
+              alt="Elena Fieder, Bilanzbuchhalterin (IHK), mit Laptop im Porträt"
               placeholder="blur"
               sizes="(min-width: 1024px) 30vw, 100vw"
               className="mt-8 aspect-[4/5] w-full rounded-lg object-cover"

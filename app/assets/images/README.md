@@ -3,7 +3,7 @@
 | Datei | Verwendung |
 |-------|-----------|
 | `elena-fieder-hero.webp` | Hero: Panel rechts (Desktop) bzw. Hintergrund mit Verlauf (Mobil). 1200 x 1500 (4:5). |
-| `elena-fieder-portrait.webp` | Über-mich-Porträt. 1200 x 1500 (4:5), aus `MIN_0176.JPG` (2:3) zugeschnitten, q82. |
+| `elena-fieder-portrait.webp` | Über-mich-Porträt. 1200 x 1500 (4:5), aus `MIN_0284.JPG` (2:3) zugeschnitten, q82. |
 | `arbeitsplatz.webp` | Ungenutzt. Frühere Hero-Fassung (Büroarbeitsplatz, 1920 x 1098). |
 | `belege-vorher.jpg` / `belege-nachher.jpg` | Vorher/Nachher-Regler in der Lösung-Section. |
 | `kontobuch.jpg` | Ungenutzt. War in einer früheren Hero-Fassung und im Kontaktblock. |
